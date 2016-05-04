@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>git_cheatsheet</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  counter-reset: ebene1;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 40px;
+  border-bottom: 1px solid #ccc;
+  color: #159;
+}
+
+h2 {
+  font-size: 24px;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+
+/* NUMBERING
+=============================================================================*/
+
+
+   
+   h4:before{
+     content: counter(ebene1) "." counter(ebene2) " ";
+     counter-increment: ebene2;
+   }
+h4 {counter-reset: ebene3;}
+       
+     
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+code {
+  color: 1E90FF;
+}
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+table th, table td {
+  /*border: 1px solid blue;*/
+  padding: 8px 8px;
+  margin: 0px;
+}
+
+table tr {
+  /*border-top: 1px solid #ccc;*/
+  background-color: white;
+}
+
+table tr:nth-child(2n) {
+  /*background-color: #f8f8f8;*/
+  background-color: rgb(135,206,250);
+  /*background-color: rgb(0,191,255);*/
+  /*173,220,230*/
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<base href='file:\\\C:\Users\luppme\Documents\BBZW\Projektwoche\DoIT\Unterlagen\Git\'/>
+</head>
+<body>
+<h1>Git Bash Cheatsheet</h1>
+<h2>Index</h2>
+<blockquote>
+<p><strong>2. Konfiguration</strong></p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>2.1 Identität bearbeiten</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>2.2 Texteditor aktivieren (VIM)</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>2.3 Diff Programm auswählen (VIM Diff)</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>2.4 Einstellungen auflisten</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<p><strong>3. Git Repository</strong></p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>3.1. Neues Repository anlegen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>3.2. Repository klonen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>3.3. Dateien zur Versionskontrolle hinzufügen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<p><strong>4. Status</strong></p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>4.1. Datei zur Versionskontrolle hinzufügen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>4.2. Datei nach Bearbeitung 'stagen'</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>4.3. Datei(en) committen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>4.4. Commithistorie</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>4.5. Filterung der Log Daten</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>4.6. Status des Repositorys prüfen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>4.7. Den letzten Commit ändern</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>4.8. Änderungen aus der Staging Area entfernen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<p><strong>5. Dateien / Ordner verwalten</strong></p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>5.1. Neue Datei erstellen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>5.2. Neuen Ordner erstellen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>5.3. Datei löschen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>5.4. Ordner löschen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>5.5. Datei aus der Versionskontrolle nehmen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>5.6. Datei umbenennen / verschieben</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>5.7. Die Version des letzten Commits der Datei aufrufen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<p><strong>6. Tags</strong></p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>6.1. Kommentierte Tags</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>6.2. Einfache Tags</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<p><strong>7. Branching</strong></p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>7.1. Master-Branch</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>7.2. Neuen Branch erstellen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>7.3. Branch löschen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>7.4. HEAD</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>7.5. Merging</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>7.6. Branches anzeigen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>7.7. Letzten Commit der verschiedenen Branches anzeigen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong><em>7.8. Zusammengeführte Branches anzeigen</em></strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<h2>Konfiguration</h2>
+<p>Hier sind die wichtigsten Befehle zu den Standardeinstellungen:</p>
+<blockquote>
+<p>Um die Konfiguration zu bearbeiten wird die Kommandozeile <strong>git config</strong> verwendet.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Identität bearbeiten</h3>
+<pre><code>$ git config --global user.name &quot;Melvin Lupp&quot;
+$ git config --global user.email melvin.lupp@ch.schindler.com
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Texteditor aktivieren (VIM)</h3>
+<pre><code>$ git config --global core.editor vim
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Diff Programm auswählen (VIM Diff)</h3>
+<pre><code>$ git config --global merge.tool vimdiff
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Einstellungen auflisten</h3>
+<pre><code>$ git config --list
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<p>Falls man irgendwann mal einen command vergisst, kann man in git auf 2 Arten eine Hilfeabfrage zum entsprechenden Element, wie z.B. git config senden:</p>
+<pre><code>$ git help config
+$ git config --help
+</code></pre>
+<p>Wenn man einen dieser Befehle eingibt, werden dazugehörige Commands aufgelistet.</p>
+<h2>Git Repository</h2>
+<p>Genau wie in der cmd Befehlsbox, kann man in bash mit dem Befehl <code>cd &lt;Pfad&gt;</code> das Verzeichnis wechseln.</p>
+<blockquote>
+<h3>Neues Repository anlegen</h3>
+<pre><code>$ git init &lt;Repository Namen&gt;
+</code></pre>
+<p>Dieser Befehl legt ein neues <em>lokales</em> Repository an.</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git remote
+</code></pre>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Repository klonen</h3>
+<pre><code>$ git clone &lt;Pfad zum Repository&gt;
+$ git clone &lt;Pfad zum Repository&gt; &lt;neuer Name für Kopie&gt;
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Dateien zur Versionskontrolle hinzufügen</h3>
+<pre><code>$ git add &lt;Dateiname / Pfad zur Datei&gt;
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<h2>Status</h2>
+<p>Eine Datei kann sich in verschiedenen Zuständen befinden; untracked (nicht in der Versionskontrolle), unmodified (seit dem letzten Commit nicht mehr bearbeitet), modified (Datei wurde bearbeitet, aber noch nicht für Commit bereitgestellt), staged (Eine Datei wurde für den Commit vorbereitet).</p>
+<p><img src="http://git-scm.com/figures/18333fig0201-tn.png" alt="" /></p>
+<blockquote>
+<h3>Datei zur Versionskontrolle hinzufügen</h3>
+<pre><code>$ git add &lt;Dateiname&gt;
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Datei nach Bearbeitung 'stagen'</h3>
+<pre><code>$ git add &lt;Dateiname&gt;
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Datei(en) committen</h3>
+<pre><code>$ git commit
+</code></pre>
+<p>Nach diesem Befehl öffnet sich das VIM und man kann seinen Kommentar zum Commit (Snapshot) dazuschreiben. Ein Commit bedeutet, dass eine oder mehrere Dateien Versioniert werden.</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git commit -a
+</code></pre>
+<p>Das <code>-a</code> bedeutet, dass man die Staging area überspringt. Die Dateien, welche sich unter der Versionskontrolle befinden, werden so committed, wie sie im Augenblick sind, und nicht, wie sie waren, als sie das letzte mal geadded wurden.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Commithistorie</h3>
+<p>Wenn man bereits einige Commits gemacht hat, kann man sich die Commithistorie ansehen. Diese kann man in verschiedenen Formaten anschauen.</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git log
+</code></pre>
+<p><code>git log</code> zeigt die Checksummen der Commits an, den Autor (und die email-Adresse) und einen Zeitstempel.</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git log -p
+</code></pre>
+<p>Diese Option erweitert <code>git log</code>, indem sie anzeigt, was für Änderungen zeilenweise an den Dokumenten vorgenommen wurden.</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git log -2
+</code></pre>
+<p>Hier werden nur die logs der letzten 2 Commits angezeigt. Man kann eine beliebige Zahl schreiben, es werden so viele logs angezeigt, wie man verlangt.</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git log -p --word-diff
+</code></pre>
+<p>Dies ist eine Erweiterung von <code>git log -p</code>. Man kann damit die Änderungen der einzelnen Wörter statt die der Zeilen nachverfolgen. Dies ist eine gute Erweiterung für längere Textdateien.</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git log --stat
+</code></pre>
+<p>Dieser Command bewirkt, dass zu jedem Commit eine kurze Statistik angezeigt wird, die zeigt, wie viele Dateien / Zeilen gelöscht oder hinzugefügt wurden.</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git log --pretty
+</code></pre>
+<p>Mit dem Begriff <code>--pretty</code> kann man das Format des Commit-Logs selbst beeinflussen. Man kann nach dem Command das Format setzen:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><code>git log --pretty=oneline</code> -&gt; Alle Commits werden mit dem Hash und dem Kommentar auf 1 Linie angezeigt.</li>
+<li><code>git log --pretty=format:&quot;%h - %an, %ar : %s</code> -&gt; die Option <code>format</code> bedeutet, dass man sich den Log selbst zusammenstellen kann. Bei dem obigen Beispiel wird der Commit so angezeigt:</li>
+</ul>
+</blockquote>
+<blockquote>
+<pre><code>`HashNr - Autor Name, Änderungsdatum (z.B. 3 months ago) : Commit-Kommentar`
+</code></pre>
+</blockquote>
+<blockquote>
+<pre><code> Eine Zusammenstellung der `format`-Optionen findet man auf dieser Seite:
+ 
+ [http://git-scm.com/book/de/Git-Grundlagen-Die-Commit-Historie-anzeigen](http://git-scm.com/book/de/Git-Grundlagen-Die-Commit-Historie-anzeigen)
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Filterung der Log Daten</h3>
+<pre><code>$ git log --since=2.weeks
+</code></pre>
+<p>Die Option <code>--since=&lt;&gt;.&lt;&gt;</code> lässt alle Logdaten der letzten 2 Wochen anzeigen.</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git log --until=2.weeks
+</code></pre>
+<p>Dies ist das Gegenteil der <code>since</code>-funktion. Es werden alle Logdaten angezeigt, die länger her sind als 2 Wochen.</p>
+</blockquote>
+<blockquote>
+<p>Man kann auch ein Datum eingeben, z.B. <code>2008-01-15</code>.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Status des Repositorys prüfen</h3>
+<pre><code>$ git status
+</code></pre>
+<p>Mit diesem Befehl wird ausgegeben, welche Dateien in welchem Status sind.</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git diff
+</code></pre>
+<p>Mit diesem Befehl kann man genau sehen, was sich in welchem Dokument verändert hat. Allerdings zeigt er nur die Änderungen an, welche noch nicht für den nächsten Commit vorbereitet wurden.
+$ git diff --cached
+Mit diesem Befehl kann man genau sehen, was sich in welchem Dokument verändert hat. Allerdings zeigt er nur die Änderungen an, welche bereits für den nächsten Commit vorbereitet wurden.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Den letzten Commit ändern</h3>
+<pre><code>$ git commit --amend
+</code></pre>
+<p><strong>Achtung:</strong> Wenn man hier einen Fehler macht, kann es sein, dass man Daten verliert!</p>
+</blockquote>
+<blockquote>
+<p>Falls man den letzten Commit angelegt hat, und de Commitmeldung oder eine Datei falsch angegeben oder vergessen hat, kann man das vergessene File adden. Danach kann man den Befehl <code>git commit --amend</code> ausführen und man kann normal im VIM den Commit Betreff ändern.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Änderungen aus der Staging Area entfernen</h3>
+<pre><code>$ git reset HEAD &lt;dateiname&gt;
+</code></pre>
+<p>Mithilfe dieses Befehls kann man geaddete Dateien wieder aus der Staging Area herausnehmen, ohne, dass man sie gleich aus der Versionskontrolle entfernen muss.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<h2>Dateien / Ordner verwalten</h2>
+<blockquote>
+<h3>Neue Datei erstellen</h3>
+<pre><code>$ touch &lt;Dateiname&gt;
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Neuen Ordner erstellen</h3>
+<pre><code>$ mkdir &lt;ordnername&gt;
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Datei löschen</h3>
+<pre><code>$ rm &lt;dateiname&gt;
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Ordner löschen</h3>
+<pre><code>$ rmdir &lt;ordnername&gt;
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Datei aus der Versionskontrolle nehmen</h3>
+<pre><code>$ rm --cached &lt;dateiname&gt;
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Datei umbenennen / verschieben</h3>
+<pre><code>$ git mv &lt;bisheriger dateiname&gt; &lt;neuer dateiname&gt;
+</code></pre>
+<p>Dieser Befehl benennt eine Datei um.</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git mv &lt;dateiname&gt; &lt;ordnername/dateiname&gt;
+</code></pre>
+<p>Dieser Befehl verschiebt die Datei in einen Unterordner.</p>
+</blockquote>
+<blockquote>
+<p><em>Beim verschieben in einen anderen Ordner, wird beim ausführen von <code>git status</code> die Datei ebenfalls als 'renamed' eingetragen, obwohl sie nur verschoben wurde.</em></p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Die Version des letzten Commits der Datei aufrufen</h3>
+<p>Dies ist ein sehr wichtiger Punkt. Wenn man eine Datei abgespeichert hat, allerdings die Änderungen nicht gut findet und wieder zu einer früheren Version der Datei zurück will, kann man mit der folgenden Kommandozeile die Version wiederherstellen:</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git checkout -- &lt;dateiname&gt;
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<h2>Tags</h2>
+<p>Ein Tag ist eine Markierung für einen Commit. Man kann sozusagen Lesezeichen setzen. Wenn man einen Commit erstellt hat, welchen man sehr wichtig findet, kann man gleich nachdem man den Commit durchgeführt hat einen Tag setzen. Wenn man einige Commits später wieder an diese Stelle zurückkehren will, kann man mit dem Befehl <code>git checkout &lt;Tagname&gt;</code> wieder dort hin gelangen.
+Im Source Tree wird das sehr deutlich und einfach dargestellt, man kann einen Commit auswählen, für welchen man einen Tag hineinschreibt. Nachdem man den Befehl mit <code>checkout</code> durchgeführt hat, sieht man, dass der Zeiger HEAD auf diesen Commit zurückgesprungen ist.</p>
+<blockquote>
+<h3>Kommentierte Tags</h3>
+<pre><code>$ git tag -a &lt;Versionenname&gt; -m '&lt;Kommentar&gt;
+</code></pre>
+<p>Diesen Befehl braucht man z.B. wenn man einen Commit umfangreich markieren möchte. Er zeigt die Checksumme, den Namen und die Email Adresse des Autors.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Einfache Tags</h3>
+<pre><code>$ git tag &lt;Versionenname&gt;
+</code></pre>
+<p>Tag zeigt nur Prüfsumme an, welche dem Commit gehört, zu dem der Tag verweist.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<h2>Branching</h2>
+<p>Unter einem Branch versteht man einen Zeiger, welcher auf einen Commit zeigt.</p>
+<blockquote>
+<h3><code>Master</code>-Branch</h3>
+<p>Ein Master Branch verweist auf den letzten erstellten Snapshot.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Neuen Branch erstellen</h3>
+<pre><code>$ git branch &lt;Branchname&gt;
+</code></pre>
+<p>Wenn man allerdings einen neuen Branch erstellen will, und gleichzeitig darauf zugreifen möchte, kann man folgende Option benutzen:</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git checkout -b &lt;Branchname&gt;
+</code></pre>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Branch löschen</h3>
+<pre><code>$ git branch -d &lt;Branchname&gt;
+</code></pre>
+<p>Mit diesem Befehl kann man ein Branch wieder löschen. Dies funktioniert allerdings nur, wenn man sich nicht gerade auf diesem Branch befindet, d.h. Man muss zuerst auf ein anderes Branch wechseln, bevor man das Branch löschen kann</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git branch -D &lt;Branchname&gt;
+</code></pre>
+<p>Falls sich in diesem Branch noch Committete Dateien befanden, die noch nicht gemerged wurden, wird nach dem Versuch mit <code>git branch -d</code> eine Fehlermeldung kommen, nämlich diese:</p>
+</blockquote>
+<blockquote>
+<pre><code>error: The branch '&lt;branchname&gt;' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D &lt;branchname&gt;'.
+</code></pre>
+</blockquote>
+<blockquote>
+<p>Wenn du aber alle Änderungen auf diesem Branch verwerfen möchtest (auch die Committeten), kannst du mit dem Befehl <code>git branch -D</code> fortfahren.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>HEAD</h3>
+<p>Bei HEAD handelt es sich um einen Zeiger auf den aktuell ausgewählten Branch. Der HEAD-Zeiger zeigt standardmässig immer auf den Master, egal, ob man selbst einen Branch erstellt hat. Um den aktuellen Branch zu wechseln, d.h. um den HEAD zeiger auf einen anderen Branch zu lenken, kann man den folgenden Befehl verwenden:</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git checkout &lt;Branchname&gt;
+</code></pre>
+</blockquote>
+<blockquote>
+<p><em>Beispiel mit dem Branch &quot;Testing&quot;:</em></p>
+</blockquote>
+<blockquote>
+<pre><code>$ git branch testing
+</code></pre>
+</blockquote>
+<blockquote>
+<p><img src="http://git-scm.com/figures/18333fig0305-tn.png" alt="" /></p>
+</blockquote>
+<blockquote>
+<pre><code>$ git checkout testing
+</code></pre>
+</blockquote>
+<blockquote>
+<p><img src="http://git-scm.com/figures/18333fig0306-tn.png" alt="" /></p>
+</blockquote>
+<blockquote>
+<pre><code>$ git commit -a -m '
+</code></pre>
+</blockquote>
+<blockquote>
+<p><img src="http://git-scm.com/figures/18333fig0307-tn.png" alt="" /></p>
+</blockquote>
+<blockquote>
+<p>Nun kann man zum Master-Branch zurückkehren, was man wieder mit dem <code>checkout</code> Objekt macht. Nun sind vorübergehend alle Dateien in dem Arbeitsverzeichnis wieder auf die Version zurückgestellt, auf die das Master-Branch zeigt. Man kann also von diesem Zustand aus wiederum einige andere Änderungen vornehmen. Wenn man diese nun wieder Committed, passiert folgendes:</p>
+</blockquote>
+<blockquote>
+<p><img src="http://git-scm.com/figures/18333fig0309-tn.png" alt="" /></p>
+</blockquote>
+<blockquote>
+<p>Die Versionen verzweigen sich. Man kann also an demselben Projekt arbeiten, aber völlig verschiedene Änderungen machen. Später kann man die Versionen wieder zusammenführen.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Merging</h3>
+<pre><code>$ git merge &lt;Branchname&gt;
+</code></pre>
+<p>Mit Hilfe dieses Befehls kann man die verschiedenen Versionen einer / oder mehrerer Dateien zusammenführen. Ein Beispiel wäre:</p>
+</blockquote>
+<blockquote>
+<p><strong>Dokument auf Master Branch:</strong></p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Dies ist eine Zusammenfassung zum Thema Git und den wichtigsten Kommandos.
+Source Tree wird hier erklärt, ist aber einfach zu verstehen, wenn man mit dem Kommandozeilentool umgehen kann.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Plötzlich merkt man, dass im 2. Satz ein Wort fehlt.</p>
+</blockquote>
+<blockquote>
+<p><strong>Dokument auf Branch test1</strong></p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Dies ist eine Zusammenfassung zum Thema Git und den wichtigsten Kommandos.
+Source Tree wird hier NICHT erklärt, ist aber einfach zu verstehen, wenn man mit dem Kommandozeilentool umgehen kann.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Wenn man nun beide Versionen auf den jeweiligen Branches Committed, kann man via <code>git checkout master</code> wieder vom test1 Branch zu Master wechseln. Nun kann man den <code>git merge test1</code> Befehl ausführen. Das bedeutet, dass die Committeten Versionen von test1 nun in die Versionen von Master einfliessen. Nun wird logischerweise die neue Version in Master genau gleich aussehen wie in test1, da lediglich das Wort &quot;NICHT&quot; eingefügt wurde. Wenn man allerdings mal mehrere Sachen in ein Dokument schreibt, kann diese Option sehr nützlich sein.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Branches anzeigen</h3>
+<pre><code>$ git branch
+</code></pre>
+<p>Dies zeigt eine Liste mit allen aktuellen Branches. Das Branch, vor dem ein * steht, ist das aktuell benutzte Branch, auf das der HEAD Zeiger zeigt.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Letzten Commit der verschiedenen Branches anzeigen</h3>
+<pre><code>$ git branch -v
+</code></pre>
+<p>Mit diesem Befehl wird der letzte Commit mit dem Hash und dem Betreff von jedem Branch angezeigt.</p>
+</blockquote>
+<blockquote>
+<p><img src ="C:\Users\luppme\Pictures\git\git_branch_-v.png" title="Zeigt letzten Commit von jedem Branch" /></p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Zusammengeführte Branches anzeigen</h3>
+<pre><code>$ git branch --merged
+</code></pre>
+<p>Bei diesem Befehl wird angezeigt, welche Branches in den aktuell ausgewählten Branch gemerged wurden.</p>
+</blockquote>
+<blockquote>
+<pre><code>$ git branch --no-merged
+</code></pre>
+<p>Um Branches auflisten zu lassen, welche noch nicht in den aktuellen Branch gemerged wurden, kann man diesen Befehl auswählen.</p>
+</blockquote>
+<blockquote>
+<p><img src="C:\Users\luppme\Pictures\git\git_branch_merged_no-merged.png" title="Zeigt zusammengeführte / nicht zusammengeführte Branches" /></p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<h2>Branching Workflows</h2>
+<blockquote>
+<h3>Langfristige Branches</h3>
+</blockquote>
+<blockquote>
+<p>Unter langfristigem Branching versteht man die Existenz von mehreren Branches, welche man alle gleichzeitig Verwenden kann, die jedoch alle auf verschiedenen Ebenen ihren Platz haben. Mann kann sich das besser vorstellen, wenn man diese Grafik betrachtet:</p>
+</blockquote>
+<blockquote>
+<p><img src="http://git-scm.com/figures/18333fig0319-tn.png" alt="" /></p>
+</blockquote>
+<blockquote>
+<p>Hier werden 3 Branches dargestellt; <em>master, develop und topic</em>.
+Auf dem Master Branch befindet sich nur ein einziger Commit. Auf den anderen beiden Branches jedoch findet man mehrere Commits, die von einander abhängig sind. So sind die Commits auf der Ebene <em>topic</em> viel instabiler, als die Commits auf den höheren Ebenen. Die Commits in <em>topic</em> wurden erst gerade erstellt. Sobald man einen Commit für stabil genug hält, um mit der Version aus einer höheren Ebene zusammenzuarbeiten, werden diese Branches gemerged. Dieses Prinzip wird oft verwendet, wenn man z.B. auf dem master-Branch nur die Version des Projektes haben will, die man veröffentlicht. Die unteren Ebenen sind nur zum Test da.</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><strong>Kurzfassung:</strong></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>In langfristigen Branches werden meist mehrere Ebenen verwendet, welche man zur selben Zeit bearbeiten kann, und je nach Stabilitätsstufe mit einer höheren Ebene zusammenführt.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<h3>Themen Branches</h3>
+<p>Themenbranches sind kurzzeitig erstellte Branches, welche nur für einen ganz bestimmten Abschnitt eines Projekts eingesetzt werden. Wenn sie gut sind, kann man sie mit dem Master Branch zusammenführen und anschliessend wieder löschen.</p>
+</blockquote>
+<blockquote>
+<p><img src="http://git-scm.com/figures/18333fig0320-tn.png" alt="" /></p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
