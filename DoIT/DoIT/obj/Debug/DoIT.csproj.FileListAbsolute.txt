@@ -1,3 +1,5 @@
 \\10.10.0.1\Austausch\INF13a\Projektwoche\Abgabe\Dokumente_Lupp_Jotheeswaraguru\Projekt\DoIT\DoIT\bin\Debug\DoIT.exe.config
 C:\Users\Melvin_Lupp\Desktop\DoIT\DoIT\bin\Debug\DoIT.exe.config
 Z:\INF13a\Projektwoche\Abgabe\Dokumente_Lupp_Jotheeswaraguru\Develop\DoIT\DoIT\bin\Debug\DoIT.exe.config
+C:\Users\luppme\Documents\BBZW\Projektwoche\DoIT\DoIT\DoIT\bin\Debug\DoIT.exe.config
+C:\Users\Melvin_Lupp\Documents\DoIT\DoIT\DoIT\bin\Debug\DoIT.exe.config

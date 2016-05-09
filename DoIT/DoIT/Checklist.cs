@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace DoIT
 {
-    public class Calendar
+    public class Checklist
     {
         // Members
         private List<UserTask> m_Tasks;
 
         // Methods
-        public Calendar() { }
+        public Checklist() { }
 
-        public Calendar(List<UserTask> tasks)
+        public Checklist(List<UserTask> tasks)
         {
             this.setTasks(tasks);
         }
