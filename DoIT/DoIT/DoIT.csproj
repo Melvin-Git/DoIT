@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="Administrator.cs" />
     <Compile Include="Calendar.cs" />
-    <Compile Include="Checklist.cs" />
     <Compile Include="Enumerations.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
