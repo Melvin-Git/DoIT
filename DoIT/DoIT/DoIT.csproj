@@ -48,15 +48,12 @@
     <Compile Include="Calendar.cs" />
     <Compile Include="Checklist.cs" />
     <Compile Include="Enumerations.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
->>>>>>> Methods
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
