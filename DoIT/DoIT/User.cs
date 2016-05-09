@@ -12,7 +12,7 @@ namespace DoIT
         private string m_Username;
         private string m_Password;
         private List<UserTask> m_Tasks;
-        private List<Calendar> m_Calendars;
+        private List<Calendar> m_Calendars = new List<Calendar>();
         private Checklist m_Checklist;
 
         // Methods
@@ -70,20 +70,19 @@ namespace DoIT
             return this.m_Tasks;
         }
 
-        private void setTasks(UserTask value)
+        private void setTasks(List<UserTask> value)
         {
-            this.m_Calendars.Add(value);
+            this.m_Tasks = value;
         }
-
         // Properties for m_Calendars.
         public List<Calendar> getCalendars()
         {
             return this.m_Calendars;
         }
 
-        private void setCalendars(Calendar value)
+        private void setCalendars(List<Calendar> value)
         {
-            this.m_Calendars.Add(value);
+            this.m_Calendars = value;
         }
 
         // Properties for m_Checklist.

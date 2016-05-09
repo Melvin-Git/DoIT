@@ -46,7 +46,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportBugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuitmAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gv_done = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gv_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -177,7 +177,7 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.documentationToolStripMenuItem,
             this.reportBugsToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.mnuitmAbout});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -194,11 +194,12 @@
             this.reportBugsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.reportBugsToolStripMenuItem.Text = "Report Bugs";
             // 
-            // aboutToolStripMenuItem
+            // mnuitmAbout
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.mnuitmAbout.Name = "mnuitmAbout";
+            this.mnuitmAbout.Size = new System.Drawing.Size(157, 22);
+            this.mnuitmAbout.Text = "About";
+            this.mnuitmAbout.Click += new System.EventHandler(this.mnuitmAbout_Click);
             // 
             // dataGridView1
             // 
@@ -318,7 +319,7 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportBugsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuitmAbout;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn gv_done;
         private System.Windows.Forms.DataGridViewTextBoxColumn gv_description;

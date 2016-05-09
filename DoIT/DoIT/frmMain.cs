@@ -16,5 +16,12 @@ namespace DoIT
         {
             InitializeComponent();
         }
+
+        // Show About-Box when Menustrip About is clicked.
+        private void mnuitmAbout_Click(object sender, EventArgs e)
+        {
+            var About = new frmAbout();
+            About.ShowDialog();
+        }
     }
 }
