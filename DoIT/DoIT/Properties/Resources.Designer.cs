@@ -69,5 +69,15 @@ namespace DoIT.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1462208933_editor_pencil_pen_edit_write_glyph1 {
+            get {
+                object obj = ResourceManager.GetObject("1462208933_editor-pencil-pen-edit-write-glyph1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

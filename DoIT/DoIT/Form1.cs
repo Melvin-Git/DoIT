@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DoIT
 {
-    public partial class mainview : Form
+    public partial class frmMain : Form
     {
-        public mainview()
+        public frmMain()
         {
             InitializeComponent();
         }
