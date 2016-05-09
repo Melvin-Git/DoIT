@@ -1,1 +1,1 @@
-﻿enum TaskStatus { Open, Done };
+﻿public enum TaskStatus { Open, Done };
