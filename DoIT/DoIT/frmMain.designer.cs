@@ -40,8 +40,6 @@
             this.editTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vIEWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.maxCalenderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hideCalendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +62,8 @@
             this.lblCalendar = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblCalendarName = new System.Windows.Forms.Label();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -86,6 +86,8 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.importToolStripMenuItem,
+            this.exportToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.saveCalendarToolStripMenuItem,
             this.newCalendarToolStripMenuItem,
             this.deleteCalendarToolStripMenuItem});
@@ -130,54 +132,40 @@
             // addNewTaskToolStripMenuItem
             // 
             this.addNewTaskToolStripMenuItem.Name = "addNewTaskToolStripMenuItem";
-            this.addNewTaskToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.addNewTaskToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addNewTaskToolStripMenuItem.Text = "Add New Task";
             // 
             // editTaskToolStripMenuItem
             // 
             this.editTaskToolStripMenuItem.Name = "editTaskToolStripMenuItem";
-            this.editTaskToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.editTaskToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editTaskToolStripMenuItem.Text = "Edit Task";
             // 
             // deleteTaskToolStripMenuItem
             // 
             this.deleteTaskToolStripMenuItem.Name = "deleteTaskToolStripMenuItem";
-            this.deleteTaskToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.deleteTaskToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.deleteTaskToolStripMenuItem.Text = "Delete Task";
             // 
             // vIEWToolStripMenuItem
             // 
             this.vIEWToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.maxCalenderToolStripMenuItem,
-            this.hideCalendarToolStripMenuItem,
             this.filterToolStripMenuItem,
             this.searchToolStripMenuItem});
             this.vIEWToolStripMenuItem.Name = "vIEWToolStripMenuItem";
             this.vIEWToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.vIEWToolStripMenuItem.Text = "View";
             // 
-            // maxCalenderToolStripMenuItem
-            // 
-            this.maxCalenderToolStripMenuItem.Name = "maxCalenderToolStripMenuItem";
-            this.maxCalenderToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.maxCalenderToolStripMenuItem.Text = "Max. Calendar";
-            // 
-            // hideCalendarToolStripMenuItem
-            // 
-            this.hideCalendarToolStripMenuItem.Name = "hideCalendarToolStripMenuItem";
-            this.hideCalendarToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.hideCalendarToolStripMenuItem.Text = "Hide Calendar";
-            // 
             // filterToolStripMenuItem
             // 
             this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
-            this.filterToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.filterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.filterToolStripMenuItem.Text = "Filter";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.searchToolStripMenuItem.Text = "Search";
             // 
             // helpToolStripMenuItem
@@ -350,6 +338,17 @@
             this.lblCalendarName.TabIndex = 12;
             this.lblCalendarName.Text = "---";
             // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.exportToolStripMenuItem.Text = "Export";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(154, 6);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,8 +393,6 @@
         private System.Windows.Forms.ToolStripMenuItem deleteTaskToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vIEWToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem maxCalenderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hideCalendarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem filterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
@@ -417,6 +414,8 @@
         private System.Windows.Forms.Label lblCalendar;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblCalendarName;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     }
 }
 
