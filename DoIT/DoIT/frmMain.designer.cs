@@ -279,7 +279,6 @@
             // 
             // btnAll
             // 
-            this.btnAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAll.Location = new System.Drawing.Point(18, 399);
             this.btnAll.Name = "btnAll";
             this.btnAll.Size = new System.Drawing.Size(178, 23);
@@ -305,7 +304,8 @@
             // 
             // lblUser
             // 
-            this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.Location = new System.Drawing.Point(15, 36);
@@ -316,7 +316,8 @@
             // 
             // lblCalendar
             // 
-            this.lblCalendar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblCalendar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalendar.AutoSize = true;
             this.lblCalendar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalendar.Location = new System.Drawing.Point(209, 36);
@@ -327,7 +328,8 @@
             // 
             // lblUserName
             // 
-            this.lblUserName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.Location = new System.Drawing.Point(66, 36);
@@ -338,7 +340,8 @@
             // 
             // lblCalendarName
             // 
-            this.lblCalendarName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblCalendarName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalendarName.AutoSize = true;
             this.lblCalendarName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalendarName.Location = new System.Drawing.Point(291, 36);
@@ -362,6 +365,7 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.mnu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnu;
             this.MinimumSize = new System.Drawing.Size(850, 500);
             this.Name = "frmMain";
