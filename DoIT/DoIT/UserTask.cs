@@ -13,6 +13,7 @@ namespace DoIT
         private DateTime m_Deadline;
         private int m_Priority;
         private DateTime m_Reminder;
+        private TaskStatus m_Status;
 
         // Methods
         public void Remember()
@@ -64,6 +65,17 @@ namespace DoIT
         public void setReminder(DateTime value)
         {
             this.m_Reminder = value;
+        }
+
+        // Done?
+        public TaskStatus getDone()
+        {
+            return this.m_Status;
+        }
+
+        public void setDone(TaskStatus value)
+        {
+            this.m_Status = value;
         }
     }
 }
