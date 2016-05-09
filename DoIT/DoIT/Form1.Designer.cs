@@ -54,6 +54,9 @@
             this.gv_priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gv_remember = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gv_plus = new System.Windows.Forms.DataGridViewImageColumn();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.gb = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -210,7 +213,7 @@
             this.gv_remember,
             this.gv_plus});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 278);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 384);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(839, 173);
             this.dataGridView1.TabIndex = 1;
@@ -248,11 +251,40 @@
             this.gv_plus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.gv_plus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(1, 2);
+            this.monthCalendar1.Location = new System.Drawing.Point(0, 33);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 2;
+            // 
+            // gb
+            // 
+            this.gb.Location = new System.Drawing.Point(190, 44);
+            this.gb.Name = "gb";
+            this.gb.Size = new System.Drawing.Size(637, 289);
+            this.gb.TabIndex = 3;
+            this.gb.TabStop = false;
+            this.gb.Text = "groupBox1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 353);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
+            // 
             // mainview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 451);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(839, 557);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.gb);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -294,6 +326,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gv_priority;
         private System.Windows.Forms.DataGridViewTextBoxColumn gv_remember;
         private System.Windows.Forms.DataGridViewImageColumn gv_plus;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.GroupBox gb;
+        private System.Windows.Forms.Label label1;
     }
 }
 
