@@ -1,6 +1,6 @@
 ﻿namespace DoIT
 {
-    partial class mainview
+    partial class frmMain
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            this.mnu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveCalendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,33 +47,40 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportBugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuitmAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.gv_done = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.gv_description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gv_deadline = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gv_priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gv_remember = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gv_plus = new System.Windows.Forms.DataGridViewImageColumn();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.gb = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnAll = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tsplblCopyright = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lblCalendar = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.lblCalendarName = new System.Windows.Forms.Label();
+            this.mnu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // mnu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.vIEWToolStripMenuItem,
             this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(839, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mnu.Location = new System.Drawing.Point(0, 0);
+            this.mnu.Name = "mnu";
+            this.mnu.Size = new System.Drawing.Size(834, 24);
+            this.mnu.TabIndex = 0;
+            this.mnu.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -177,7 +185,7 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.documentationToolStripMenuItem,
             this.reportBugsToolStripMenuItem,
-            this.mnuitmAbout});
+            this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -194,106 +202,175 @@
             this.reportBugsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.reportBugsToolStripMenuItem.Text = "Report Bugs";
             // 
-            // mnuitmAbout
+            // aboutToolStripMenuItem
             // 
-            this.mnuitmAbout.Name = "mnuitmAbout";
-            this.mnuitmAbout.Size = new System.Drawing.Size(157, 22);
-            this.mnuitmAbout.Text = "About";
-            this.mnuitmAbout.Click += new System.EventHandler(this.mnuitmAbout_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.gv_done,
-            this.gv_description,
-            this.gv_deadline,
-            this.gv_priority,
-            this.gv_remember,
-            this.gv_plus});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 384);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(839, 173);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // gv_done
-            // 
-            this.gv_done.HeaderText = "Done";
-            this.gv_done.Name = "gv_done";
-            // 
-            // gv_description
-            // 
-            this.gv_description.HeaderText = "Description";
-            this.gv_description.Name = "gv_description";
-            // 
-            // gv_deadline
-            // 
-            this.gv_deadline.HeaderText = "Deadline";
-            this.gv_deadline.Name = "gv_deadline";
-            // 
-            // gv_priority
-            // 
-            this.gv_priority.HeaderText = "Priority";
-            this.gv_priority.Name = "gv_priority";
-            // 
-            // gv_remember
-            // 
-            this.gv_remember.HeaderText = "Remember";
-            this.gv_remember.Name = "gv_remember";
-            // 
-            // gv_plus
-            // 
-            this.gv_plus.HeaderText = "+";
-            this.gv_plus.Image = global::DoIT.Properties.Resources._1462208933_editor_pencil_pen_edit_write_glyph;
-            this.gv_plus.Name = "gv_plus";
-            this.gv_plus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.gv_plus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
             // monthCalendar1
             // 
             this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(1, 2);
-            this.monthCalendar1.Location = new System.Drawing.Point(0, 33);
+            this.monthCalendar1.Location = new System.Drawing.Point(18, 76);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 2;
             // 
-            // gb
+            // dataGridViewImageColumn1
             // 
-            this.gb.Location = new System.Drawing.Point(190, 44);
-            this.gb.Name = "gb";
-            this.gb.Size = new System.Drawing.Size(637, 289);
-            this.gb.TabIndex = 3;
-            this.gb.TabStop = false;
-            this.gb.Text = "groupBox1";
+            this.dataGridViewImageColumn1.HeaderText = "+";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 133;
             // 
-            // label1
+            // dataGridView2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 353);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.LightSkyBlue;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewImageColumn2});
+            this.dataGridView2.Location = new System.Drawing.Point(212, 76);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(610, 346);
+            this.dataGridView2.TabIndex = 5;
             // 
-            // mainview
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Done";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Deadline";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Priority";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Remember";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "+";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // btnAll
+            // 
+            this.btnAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAll.Location = new System.Drawing.Point(18, 399);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(178, 23);
+            this.btnAll.TabIndex = 6;
+            this.btnAll.Text = "show all task";
+            this.btnAll.UseVisualStyleBackColor = true;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsplblCopyright});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 439);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(834, 22);
+            this.statusStrip1.TabIndex = 8;
+            // 
+            // tsplblCopyright
+            // 
+            this.tsplblCopyright.BackColor = System.Drawing.Color.Transparent;
+            this.tsplblCopyright.Name = "tsplblCopyright";
+            this.tsplblCopyright.Size = new System.Drawing.Size(46, 17);
+            this.tsplblCopyright.Text = "© DoIT";
+            // 
+            // lblUser
+            // 
+            this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(15, 36);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(45, 18);
+            this.lblUser.TabIndex = 9;
+            this.lblUser.Text = "User:";
+            // 
+            // lblCalendar
+            // 
+            this.lblCalendar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblCalendar.AutoSize = true;
+            this.lblCalendar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalendar.Location = new System.Drawing.Point(209, 36);
+            this.lblCalendar.Name = "lblCalendar";
+            this.lblCalendar.Size = new System.Drawing.Size(76, 18);
+            this.lblCalendar.TabIndex = 10;
+            this.lblCalendar.Text = "Calendar:";
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(66, 36);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(24, 19);
+            this.lblUserName.TabIndex = 11;
+            this.lblUserName.Text = "---";
+            // 
+            // lblCalendarName
+            // 
+            this.lblCalendarName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblCalendarName.AutoSize = true;
+            this.lblCalendarName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalendarName.Location = new System.Drawing.Point(291, 36);
+            this.lblCalendarName.Name = "lblCalendarName";
+            this.lblCalendarName.Size = new System.Drawing.Size(24, 19);
+            this.lblCalendarName.TabIndex = 12;
+            this.lblCalendarName.Text = "---";
+            // 
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(839, 557);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.gb);
+            this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.lblCalendarName);
+            this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.lblCalendar);
+            this.Controls.Add(this.lblUser);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.btnAll);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "mainview";
+            this.Controls.Add(this.mnu);
+            this.MainMenuStrip = this.mnu;
+            this.MinimumSize = new System.Drawing.Size(850, 500);
+            this.Name = "frmMain";
             this.Text = "DoIT";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.mnu.ResumeLayout(false);
+            this.mnu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,7 +378,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip mnu;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveCalendarToolStripMenuItem;
@@ -319,17 +396,23 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportBugsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnuitmAbout;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn gv_done;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gv_description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gv_deadline;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gv_priority;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gv_remember;
-        private System.Windows.Forms.DataGridViewImageColumn gv_plus;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.GroupBox gb;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.Button btnAll;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tsplblCopyright;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label lblCalendar;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label lblCalendarName;
     }
 }
 

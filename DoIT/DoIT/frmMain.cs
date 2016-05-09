@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace DoIT
 {
-    public partial class mainview : Form
+    public partial class frmMain : Form
     {
-        public mainview()
+        public frmMain()
         {
             InitializeComponent();
-        }
-
-        // Show About-Box when Menustrip About is clicked.
-        private void mnuitmAbout_Click(object sender, EventArgs e)
-        {
-            var About = new frmAbout();
-            About.ShowDialog();
         }
     }
 }
