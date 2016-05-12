@@ -50,7 +50,12 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgv_main = new System.Windows.Forms.DataGridView();
+            this.colDone = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeadline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPriority = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colReminder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAll = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsplblCopyright = new System.Windows.Forms.ToolStripStatusLabel();
@@ -58,13 +63,8 @@
             this.lblCalendar = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblCalendarName = new System.Windows.Forms.Label();
-            this.colDone = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeadline = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPriority = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colReminder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mnu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +105,7 @@
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             this.exportToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -221,25 +222,50 @@
             this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn1.Width = 133;
             // 
-            // dataGridView2
+            // dgv_main
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_main.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_main.BackgroundColor = System.Drawing.Color.LightSkyBlue;
+            this.dgv_main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_main.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDone,
             this.colDescription,
             this.colDeadline,
             this.colPriority,
             this.colReminder});
-            this.dataGridView2.Location = new System.Drawing.Point(212, 76);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(610, 346);
-            this.dataGridView2.TabIndex = 5;
+            this.dgv_main.Location = new System.Drawing.Point(212, 76);
+            this.dgv_main.Name = "dgv_main";
+            this.dgv_main.RowHeadersVisible = false;
+            this.dgv_main.Size = new System.Drawing.Size(610, 346);
+            this.dgv_main.TabIndex = 5;
+            // 
+            // colDone
+            // 
+            this.colDone.HeaderText = "Done";
+            this.colDone.Name = "colDone";
+            // 
+            // colDescription
+            // 
+            this.colDescription.HeaderText = "Description";
+            this.colDescription.Name = "colDescription";
+            // 
+            // colDeadline
+            // 
+            this.colDeadline.HeaderText = "Deadline";
+            this.colDeadline.Name = "colDeadline";
+            // 
+            // colPriority
+            // 
+            this.colPriority.HeaderText = "Priority";
+            this.colPriority.Name = "colPriority";
+            // 
+            // colReminder
+            // 
+            this.colReminder.HeaderText = "Reminder";
+            this.colReminder.Name = "colReminder";
             // 
             // btnAll
             // 
@@ -314,31 +340,6 @@
             this.lblCalendarName.TabIndex = 12;
             this.lblCalendarName.Text = "---";
             // 
-            // colDone
-            // 
-            this.colDone.HeaderText = "Done";
-            this.colDone.Name = "colDone";
-            // 
-            // colDescription
-            // 
-            this.colDescription.HeaderText = "Description";
-            this.colDescription.Name = "colDescription";
-            // 
-            // colDeadline
-            // 
-            this.colDeadline.HeaderText = "Deadline";
-            this.colDeadline.Name = "colDeadline";
-            // 
-            // colPriority
-            // 
-            this.colPriority.HeaderText = "Priority";
-            this.colPriority.Name = "colPriority";
-            // 
-            // colReminder
-            // 
-            this.colReminder.HeaderText = "Reminder";
-            this.colReminder.Name = "colReminder";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,7 +352,7 @@
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnAll);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgv_main);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.mnu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -361,7 +362,7 @@
             this.Text = "DoIT";
             this.mnu.ResumeLayout(false);
             this.mnu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -390,7 +391,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgv_main;
         private System.Windows.Forms.Button btnAll;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel tsplblCopyright;

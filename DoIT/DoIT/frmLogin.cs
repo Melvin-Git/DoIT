@@ -63,7 +63,7 @@ namespace DoIT
             var user = new User();
             user.setUsername(username);
             user.setPassword(password);
-            user.AddCalendar();
+            //user.AddCalendar();
             users.Add(user);
         }
 
