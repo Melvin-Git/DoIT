@@ -13,7 +13,6 @@ namespace DoIT
         private string m_Password;
         private List<UserTask> m_Tasks;
         private List<Calendar> m_Calendars = new List<Calendar>();
-        private Checklist m_Checklist;
 
         // Methods
         public void AddTask()
@@ -83,17 +82,6 @@ namespace DoIT
         private void setCalendars(List<Calendar> value)
         {
             this.m_Calendars = value;
-        }
-
-        // Properties for m_Checklist.
-        public Checklist getChecklist()
-        {
-            return this.m_Checklist;
-        }
-
-        public void setChecklist(Checklist value)
-        {
-            this.m_Checklist = value;
         }
     }
 }
