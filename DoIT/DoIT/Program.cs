@@ -18,5 +18,14 @@ namespace DoIT
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
         }
+
+        public static List<UserTask> DeserializeTasklist()
+        {
+            var Tasklist = new List<UserTask>();
+
+            // Code for deserialization of a tasklist when the Import Function is used.
+
+            return Tasklist;
+        }
     }
 }

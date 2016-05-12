@@ -15,29 +15,43 @@ namespace DoIT
         private List<Calendar> m_Calendars = new List<Calendar>();
 
         // Methods
-        public void AddTask()
+        public void AddTask(UserTask task)
         {
-
+            m_Tasks.Add(task);
         }
 
-        public void EditTask()
+        public UserTask EditTask(int index)
         {
-
+            return m_Tasks[index];
         }
 
-        public void DeleteTask()
+        public void DeleteTask(UserTask task)
         {
-
+            m_Tasks.Remove(task);
         }
 
-        public void AddCalendar()
+        public void AddCalendar(string name, string path)
         {
+            Calendar Cal;
 
+            if (path != null)
+            {
+                Cal = new Calendar(name, Program.DeserializeTasklist());
+            }
+            else
+            {
+                Cal = new Calendar(name);
+            }
         }
 
-        public void RemoveCalendar()
+        public void RemoveCalendar(Calendar calendar)
         {
+            m_Calendars.Remove(calendar);
 
+            if(m_Calendars.Count == 0)
+            {
+                AddCalendar("Calendar " + (m_Calendars.Count + 1).ToString(), null);
+            }
         }
 
         // Properties

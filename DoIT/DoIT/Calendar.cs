@@ -9,17 +9,30 @@ namespace DoIT
     public class Calendar
     {
         // Members
+        private string m_Name;
         private List<UserTask> m_Tasks;
 
         // Methods
-        public Calendar() { }
+        public Calendar(string name) { }
 
-        public Calendar(List<UserTask> tasks)
+        public Calendar(string name, List<UserTask> tasks)
         {
+            this.setName(name);
             this.setTasks(tasks);
         }
 
         // Properties
+
+        // Name
+        public string getName()
+        {
+            return this.m_Name;
+        }
+
+        public void setName(string value)
+        {
+            this.m_Name = value;
+        }
 
         // Tasks
         public List<UserTask> getTasks()

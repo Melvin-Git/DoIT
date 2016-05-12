@@ -16,10 +16,17 @@ namespace DoIT
         private TaskStatus m_Status;
 
         // Methods
-        public void Remember()
+        public UserTask() { }
+
+        public UserTask(string description, DateTime deadline, int priority, DateTime reminder, TaskStatus status)
         {
 
         }
+
+        public void Remember()
+        {
+
+        }        
 
         // Properties
 
