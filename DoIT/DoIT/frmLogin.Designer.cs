@@ -80,12 +80,14 @@
             this.scSplitContainer.Panel1.Controls.Add(this.imgLogo);
             this.scSplitContainer.Panel1.Controls.Add(this.lblSignIn);
             this.scSplitContainer.Panel1.Controls.Add(this.pnlSignIn);
+            this.scSplitContainer.Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.scSplitContainer_Panel1_MouseDown);
             // 
             // scSplitContainer.Panel2
             // 
             this.scSplitContainer.Panel2.BackColor = System.Drawing.Color.Transparent;
             this.scSplitContainer.Panel2.Controls.Add(this.pnlRegister);
             this.scSplitContainer.Panel2.Controls.Add(this.lblRegister);
+            this.scSplitContainer.Panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.scSplitContainer_Panel2_MouseDown);
             this.scSplitContainer.Size = new System.Drawing.Size(876, 490);
             this.scSplitContainer.SplitterDistance = 575;
             this.scSplitContainer.TabIndex = 0;
@@ -134,11 +136,13 @@
             // 
             // lblSignIn
             // 
+            this.lblSignIn.AutoSize = true;
             this.lblSignIn.BackColor = System.Drawing.Color.Transparent;
             this.lblSignIn.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSignIn.ForeColor = System.Drawing.Color.White;
             this.lblSignIn.Location = new System.Drawing.Point(179, 143);
             this.lblSignIn.Name = "lblSignIn";
-            this.lblSignIn.Size = new System.Drawing.Size(282, 36);
+            this.lblSignIn.Size = new System.Drawing.Size(117, 29);
             this.lblSignIn.TabIndex = 0;
             this.lblSignIn.Text = "Sign In:";
             this.lblSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -156,10 +160,11 @@
             this.pnlSignIn.Name = "pnlSignIn";
             this.pnlSignIn.Size = new System.Drawing.Size(308, 308);
             this.pnlSignIn.TabIndex = 1;
+            this.pnlSignIn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlSignIn_MouseDown);
             // 
             // btnSignIn
             // 
-            this.btnSignIn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSignIn.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignIn.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -188,22 +193,24 @@
             // 
             // lblSignInPassword
             // 
+            this.lblSignInPassword.AutoSize = true;
             this.lblSignInPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblSignInPassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignInPassword.Location = new System.Drawing.Point(14, 133);
             this.lblSignInPassword.Name = "lblSignInPassword";
-            this.lblSignInPassword.Size = new System.Drawing.Size(282, 26);
+            this.lblSignInPassword.Size = new System.Drawing.Size(109, 24);
             this.lblSignInPassword.TabIndex = 3;
             this.lblSignInPassword.Text = "Password:";
             this.lblSignInPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblSignInUsername
             // 
+            this.lblSignInUsername.AutoSize = true;
             this.lblSignInUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblSignInUsername.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSignInUsername.Location = new System.Drawing.Point(14, 43);
             this.lblSignInUsername.Name = "lblSignInUsername";
-            this.lblSignInUsername.Size = new System.Drawing.Size(282, 26);
+            this.lblSignInUsername.Size = new System.Drawing.Size(114, 24);
             this.lblSignInUsername.TabIndex = 2;
             this.lblSignInUsername.Text = "Username:";
             this.lblSignInUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -223,10 +230,11 @@
             this.pnlRegister.Name = "pnlRegister";
             this.pnlRegister.Size = new System.Drawing.Size(289, 304);
             this.pnlRegister.TabIndex = 3;
+            this.pnlRegister.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlRegister_MouseDown);
             // 
             // btnRegister
             // 
-            this.btnRegister.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnRegister.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -248,11 +256,12 @@
             // 
             // lblRegisterPasswordRepeat
             // 
+            this.lblRegisterPasswordRepeat.AutoSize = true;
             this.lblRegisterPasswordRepeat.BackColor = System.Drawing.Color.Transparent;
             this.lblRegisterPasswordRepeat.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegisterPasswordRepeat.Location = new System.Drawing.Point(23, 138);
             this.lblRegisterPasswordRepeat.Name = "lblRegisterPasswordRepeat";
-            this.lblRegisterPasswordRepeat.Size = new System.Drawing.Size(234, 26);
+            this.lblRegisterPasswordRepeat.Size = new System.Drawing.Size(67, 20);
             this.lblRegisterPasswordRepeat.TabIndex = 9;
             this.lblRegisterPasswordRepeat.Text = "Repeat";
             this.lblRegisterPasswordRepeat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -275,34 +284,37 @@
             // 
             // lblRegisterUsername
             // 
+            this.lblRegisterUsername.AutoSize = true;
             this.lblRegisterUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblRegisterUsername.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegisterUsername.Location = new System.Drawing.Point(20, 13);
             this.lblRegisterUsername.Name = "lblRegisterUsername";
-            this.lblRegisterUsername.Size = new System.Drawing.Size(257, 26);
+            this.lblRegisterUsername.Size = new System.Drawing.Size(114, 24);
             this.lblRegisterUsername.TabIndex = 6;
             this.lblRegisterUsername.Text = "Username:";
             this.lblRegisterUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblRegisterPassword
             // 
+            this.lblRegisterPassword.AutoSize = true;
             this.lblRegisterPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblRegisterPassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegisterPassword.Location = new System.Drawing.Point(21, 75);
             this.lblRegisterPassword.Name = "lblRegisterPassword";
-            this.lblRegisterPassword.Size = new System.Drawing.Size(257, 26);
+            this.lblRegisterPassword.Size = new System.Drawing.Size(109, 24);
             this.lblRegisterPassword.TabIndex = 7;
             this.lblRegisterPassword.Text = "Password:";
             this.lblRegisterPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblRegister
             // 
+            this.lblRegister.AutoSize = true;
             this.lblRegister.BackColor = System.Drawing.Color.Transparent;
             this.lblRegister.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegister.ForeColor = System.Drawing.Color.White;
             this.lblRegister.Location = new System.Drawing.Point(3, 39);
             this.lblRegister.Name = "lblRegister";
-            this.lblRegister.Size = new System.Drawing.Size(282, 36);
+            this.lblRegister.Size = new System.Drawing.Size(131, 29);
             this.lblRegister.TabIndex = 2;
             this.lblRegister.Text = "Register:";
             this.lblRegister.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -321,12 +333,15 @@
             this.ClientSize = new System.Drawing.Size(876, 490);
             this.Controls.Add(this.scSplitContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome to DoIT!";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.scSplitContainer.Panel1.ResumeLayout(false);
             this.scSplitContainer.Panel1.PerformLayout();
             this.scSplitContainer.Panel2.ResumeLayout(false);
+            this.scSplitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scSplitContainer)).EndInit();
             this.scSplitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

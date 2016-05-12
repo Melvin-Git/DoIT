@@ -13,7 +13,10 @@ namespace DoIT
         private List<UserTask> m_Tasks;
 
         // Methods
-        public Calendar(string name) { }
+        public Calendar(string name) 
+        {
+            this.setName(name);
+        }
 
         public Calendar(string name, List<UserTask> tasks)
         {

@@ -42,6 +42,8 @@ namespace DoIT
             {
                 Cal = new Calendar(name);
             }
+
+            m_Calendars.Add(Cal);
         }
 
         public void RemoveCalendar(Calendar calendar)

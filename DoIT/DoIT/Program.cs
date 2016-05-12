@@ -21,6 +21,9 @@ namespace DoIT
             Application.Run(new frmLogin());
         }
 
+        public static List<User> Users = new List<User>();
+        public static User ActiveUser = null;
+
         public static List<UserTask> DeserializeTasklist()
         {
             var Tasklist = new List<UserTask>();
