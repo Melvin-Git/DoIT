@@ -66,5 +66,10 @@ namespace DoIT
             user.AddCalendar();
             users.Add(user);
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            scSplitContainer.BackgroundImageLayout = ImageLayout.Stretch;
+        }
     }
 }
