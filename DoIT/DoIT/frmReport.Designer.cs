@@ -1,6 +1,6 @@
 ﻿namespace DoIT
 {
-    partial class frmReport
+    partial class FrmReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReport));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReport));
             this.txbMail = new System.Windows.Forms.TextBox();
             this.rtbMeldung = new System.Windows.Forms.RichTextBox();
             this.lblMessage = new System.Windows.Forms.Label();

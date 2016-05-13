@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DoIT
+﻿namespace DoIT
 {
     public class Administrator : User
     {
@@ -18,12 +12,10 @@ namespace DoIT
         // Methods
         public void AddUser()
         {
-
         }
 
         public void RemoveUser()
         {
-
         }
     }
 }

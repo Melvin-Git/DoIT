@@ -1,6 +1,6 @@
 ﻿namespace DoIT
 {
-    partial class frmMain
+    partial class FrmMain
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.mnu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -280,7 +280,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsplblCopyright});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 439);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 440);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(834, 22);
             this.statusStrip1.TabIndex = 8;
@@ -345,7 +345,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(834, 461);
+            this.ClientSize = new System.Drawing.Size(834, 462);
             this.Controls.Add(this.lblCalendarName);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.lblCalendar);
@@ -360,6 +360,7 @@
             this.MinimumSize = new System.Drawing.Size(850, 500);
             this.Name = "frmMain";
             this.Text = "DoIT";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.mnu.ResumeLayout(false);
             this.mnu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).EndInit();

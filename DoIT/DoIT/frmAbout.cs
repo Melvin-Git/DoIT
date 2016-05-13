@@ -11,9 +11,9 @@ using System.Xml.Linq;
 
 namespace DoIT
 {
-    partial class frmAbout : Form
+    partial class FrmAbout : Form
     {
-        public frmAbout()
+        public FrmAbout()
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);

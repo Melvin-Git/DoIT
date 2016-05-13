@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 
 namespace DoIT
 {
-    public partial class frmMain : Form
+    public partial class FrmMain : Form
     {
-        public frmMain()
+        private Calendar _activeCalendar;
+        private User _activeUser;
+
+        public FrmMain()
         {
             InitializeComponent();
         }
@@ -23,20 +20,20 @@ namespace DoIT
         {
             try
             {
-                SaveFileDialog savexml = new SaveFileDialog();
+                var savexml = new SaveFileDialog();
                 savexml.DefaultExt = ".xml";
                 savexml.Filter = "XML (*.xml)|";
                 savexml.RestoreDirectory = true;
                 if (DialogResult.OK == savexml.ShowDialog())
                 {
-                    DataSet ds = new DataSet();
-                    DataTable dt = new DataTable();
+                    var ds = new DataSet();
+                    var dt = new DataTable();
                     dt.Columns.Add(new DataColumn("Done", Type.GetType("System.Boolean")));
                     dt.Columns.Add(new DataColumn("Description", Type.GetType("System.String")));
                     dt.Columns.Add(new DataColumn("Deadline", Type.GetType("System.String")));
                     dt.Columns.Add(new DataColumn("Priority", Type.GetType("System.String")));
                     dt.Columns.Add(new DataColumn("reminder", Type.GetType("System.String")));
-                    int x = 0;
+                    var x = 0;
 
                     ds.Tables.Add(dt);
                     ds.Tables[0].TableName = "Tasks";
@@ -53,8 +50,8 @@ namespace DoIT
                     } while (x < dgv_main.RowCount);*/
 
 
-                    StreamWriter serialwirter = new StreamWriter(savexml.FileName);
-                    XmlSerializer ser = new XmlSerializer(ds.GetType());
+                    var serialwirter = new StreamWriter(savexml.FileName);
+                    var ser = new XmlSerializer(ds.GetType());
                     ser.Serialize(serialwirter, ds);
                     serialwirter.Close();
                     ds.Clear();
@@ -68,7 +65,15 @@ namespace DoIT
             {
                 MessageBox.Show(ex.StackTrace);
             }
- 
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            _activeUser = Program.ActiveUser;
+            _activeCalendar = _activeUser.Calendars[0];
+
+            lblUserName.Text = _activeUser.Username;
+            lblCalendarName.Text = _activeCalendar.getName();
         }
     }
 }

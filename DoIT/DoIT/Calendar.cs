@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DoIT
 {
@@ -13,15 +9,15 @@ namespace DoIT
         private List<UserTask> m_Tasks;
 
         // Methods
-        public Calendar(string name) 
+        public Calendar(string name)
         {
-            this.setName(name);
+            setName(name);
         }
 
         public Calendar(string name, List<UserTask> tasks)
         {
-            this.setName(name);
-            this.setTasks(tasks);
+            setName(name);
+            setTasks(tasks);
         }
 
         // Properties
@@ -29,23 +25,23 @@ namespace DoIT
         // Name
         public string getName()
         {
-            return this.m_Name;
+            return m_Name;
         }
 
         public void setName(string value)
         {
-            this.m_Name = value;
+            m_Name = value;
         }
 
         // Tasks
         public List<UserTask> getTasks()
         {
-            return this.m_Tasks;
+            return m_Tasks;
         }
 
         public void setTasks(List<UserTask> value)
         {
-            this.m_Tasks = value;
+            m_Tasks = value;
         }
     }
 }

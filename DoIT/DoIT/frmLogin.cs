@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace DoIT
 {
-    public partial class frmLogin : Form
+    public partial class FrmLogin : Form
     {
         // Move Form Variables.
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -22,7 +22,7 @@ namespace DoIT
         [DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        public frmLogin()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -45,6 +45,8 @@ namespace DoIT
             }
 
             RegisterUser(txbRegisterUsername.Text, txbRegisterPassword.Text);
+
+            Login(0, "", "");
         }
 
         // Methods
@@ -67,7 +69,7 @@ namespace DoIT
 
             foreach(var user in Program.Users)
             {
-                if(user.getUsername() == username)
+                if(user.Username == username)
                 {
                     exists = true;
                     MessageBox.Show("A user with this username already exists. Please choose another username", "User exists");
@@ -81,8 +83,8 @@ namespace DoIT
         private void RegisterUser(string username, string password)
         {
             var user = new User();
-            user.setUsername(username);
-            user.setPassword(password);
+            user.Username = username;
+            user.Password = password;
             user.AddCalendar("Calendar 1", null);
             Program.Users.Add(user);
         }
@@ -100,6 +102,23 @@ namespace DoIT
 
             // Set Active User for the Program.
             Program.ActiveUser = Program.Users[userindex];
+
+            // Load Screen for the user.
+            var Main = new FrmMain();
+            Main.Show();
+            this.Hide();            
+        }
+
+        private void ShowWelcomeDialog()
+        {
+            var f = new Form();
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Width = 325;
+            f.Height = 126;
+            f.StartPosition = FormStartPosition.CenterParent;
+
+            var welcomeLabel = new Label();
+
         }
 
         // The following Methods contain the MoveForm function.
