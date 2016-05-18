@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -8,8 +10,10 @@ namespace DoIT
 {
     public partial class FrmMain : Form
     {
-        private Calendar _activeCalendar;
+        // private List<Calendar> _activeCalendars = new List<Calendar>();
         private User _activeUser;
+        private bool _inhibitAutoCheck;
+        private Calendar _activeCalendar;
 
         public FrmMain()
         {
@@ -73,7 +77,169 @@ namespace DoIT
             _activeCalendar = _activeUser.Calendars[0];
 
             lblUserName.Text = _activeUser.Username;
-            lblCalendarName.Text = _activeCalendar.getName();
+            listCalendars();
+
+            var task = new UserTask();
+            task.Status = TaskStatus.Open;
+            task.Description = "Test";
+            task.Deadline = new DateTime(2016, 07, 20);
+            task.Priority = 3;
+            task.Reminder = new DateTime(2016, 07, 20);
+
+            dgv_main.Rows.Add();
+
+            var list = new List<UserTask>();
+            list.Add(task);
+            list.Add(task);
+            RefillDatagridview(list);
+        }
+
+        private void listCalendars()
+        {
+            if (lvCalendars.Items.Count != 0)
+            {
+                var items = lvCalendars.Items.Count;
+                for (var i = 0; i < items; i++)
+                {
+                    lvCalendars.Items.RemoveAt(0);
+                }
+            }
+
+            foreach (var cal in _activeUser.Calendars)
+            {
+                lvCalendars.Items.Add(new ListViewItem(cal.Name) { Tag = cal.Index });
+            }
+        }
+
+        private void calDatePicker_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            RefillDatagridview(getTasksForSelectedDay(e.End));
+        }
+
+        private List<UserTask> getTasksForSelectedDay(DateTime date)
+        {
+            var _TasksToday = new List<UserTask>();
+
+            foreach (var task in _activeCalendar.Tasks)
+            {
+                if (task.Deadline.Equals(date))
+                {
+                    _TasksToday.Add(task);
+                }
+            }
+
+            return _TasksToday;
+        }
+
+        private void RefillDatagridview(List<UserTask> tasks)
+        {
+            // Empty Datagridview
+            var rowCount = dgv_main.RowCount;
+            for (var i = 1; i < rowCount; i++)
+            {
+                dgv_main.Rows.RemoveAt(0);
+            }
+
+            // Create Rows
+            foreach (var task in tasks)
+            {
+                // Datagridview Columns: [Status] , [Description] , [Date] , [Priority] , [Reminder]
+                var status = task.Status;
+                var description = task.Description;
+                var date = task.Deadline.ToString();
+                int priority;
+                var reminder = task.Reminder.ToString();
+
+                var row = new DataGridViewRow();
+                dgv_main.Rows.Add(row);
+                var rowIndex = dgv_main.RowCount - 2;
+
+                dgv_main.Rows[rowIndex].Cells[0].Value = status;
+                dgv_main.Rows[rowIndex].Cells[1].Value = description;
+                dgv_main.Rows[rowIndex].Cells[2].Value = date;
+
+                // Priority
+                switch (task.Priority)
+                {
+                    case 0:
+                        priority = 0;
+                        break;
+                    case 1:
+                        priority = 3;
+                        break;
+                    case 2:
+                        priority = 2;
+                        break;
+                    case 3:
+                        priority = 1;
+                        break;
+                    default:
+                        priority = 0;
+                        break;
+                }
+
+                DataGridViewComboBoxCell cell = (DataGridViewComboBoxCell) dgv_main.Rows[rowIndex].Cells[3];
+                dgv_main.Rows[rowIndex].Cells[3].Value = cell.Items[priority];
+                dgv_main.Rows[rowIndex].Cells[4].Value = reminder;
+            }
+        }
+
+        private void mnuNewCalendar_Click(object sender, EventArgs e)
+        {
+            _activeUser.AddCalendar(null, null);
+            listCalendars();
+        }
+
+        private void UpdateCalendarNames()
+        {
+            foreach (ListViewItem item in lvCalendars.Items)
+            {
+                foreach (var cal in _activeUser.Calendars)
+                {
+                    if ((int)item.Tag == cal.Index)
+                    {
+                        cal.Name = item.Text;
+                    }
+                }
+            }
+        }
+
+        private void lvCalendars_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            lvCalendars.FocusedItem.BeginEdit();
+            lvCalendars.FocusedItem.Checked = !lvCalendars.FocusedItem.Checked;
+        }
+
+        private void lvCalendars_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateCalendarNames();
+            if (lvCalendars.FocusedItem != null)
+            {
+                foreach (var cal in _activeUser.Calendars)
+                {
+                    if ((int)lvCalendars.FocusedItem.Tag == cal.Index)
+                    {
+                        _activeCalendar = cal;
+                    }
+                }
+            }
+        }
+
+        // Do not change Checkbox state after a MouseDoubleClick
+        private void lvCalendars_MouseDown(object sender, MouseEventArgs e)
+        {
+            _inhibitAutoCheck = true;
+        }
+
+        private void lvCalendars_MouseUp(object sender, MouseEventArgs e)
+        {
+            _inhibitAutoCheck = false;
+        }
+
+        private void lvCalendars_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (_inhibitAutoCheck)
+                e.NewValue = e.CurrentValue;
         }
     }
 }

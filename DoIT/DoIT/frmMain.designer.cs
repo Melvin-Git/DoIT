@@ -28,191 +28,197 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            this.mnu = new System.Windows.Forms.MenuStrip();
+            this.mnuMenustrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuImport = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuExport = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.saveCalendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newCalendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteCalendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSaveCalendar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewCalendar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDeleteCalendar = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuNewTask = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEditTask = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDeleteTask = new System.Windows.Forms.ToolStripMenuItem();
             this.vIEWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFilter = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportBugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.mnuDocumentation = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuReportBugs = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.calDatePicker = new System.Windows.Forms.MonthCalendar();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgv_main = new System.Windows.Forms.DataGridView();
             this.colDone = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeadline = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPriority = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colReminder = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAll = new System.Windows.Forms.Button();
+            this.colDeadline = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colPriority = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colReminder = new System.Windows.Forms.DataGridViewButtonColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsplblCopyright = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.lblCalendar = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.lblCalendarName = new System.Windows.Forms.Label();
-            this.mnu.SuspendLayout();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.lvCalendars = new System.Windows.Forms.ListView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.mnuMenustrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // mnu
+            // mnuMenustrip
             // 
-            this.mnu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMenustrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
             this.vIEWToolStripMenuItem,
             this.helpToolStripMenuItem});
-            this.mnu.Location = new System.Drawing.Point(0, 0);
-            this.mnu.Name = "mnu";
-            this.mnu.Size = new System.Drawing.Size(834, 24);
-            this.mnu.TabIndex = 0;
-            this.mnu.Text = "menuStrip1";
+            this.mnuMenustrip.Location = new System.Drawing.Point(0, 0);
+            this.mnuMenustrip.Name = "mnuMenustrip";
+            this.mnuMenustrip.Size = new System.Drawing.Size(1018, 24);
+            this.mnuMenustrip.TabIndex = 0;
+            this.mnuMenustrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importToolStripMenuItem,
-            this.exportToolStripMenuItem,
+            this.mnuImport,
+            this.mnuExport,
             this.toolStripMenuItem1,
-            this.saveCalendarToolStripMenuItem,
-            this.newCalendarToolStripMenuItem,
-            this.deleteCalendarToolStripMenuItem});
+            this.mnuSaveCalendar,
+            this.mnuNewCalendar,
+            this.mnuDeleteCalendar});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // importToolStripMenuItem
+            // mnuImport
             // 
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.importToolStripMenuItem.Text = "Import";
+            this.mnuImport.Name = "mnuImport";
+            this.mnuImport.Size = new System.Drawing.Size(157, 22);
+            this.mnuImport.Text = "Import";
             // 
-            // exportToolStripMenuItem
+            // mnuExport
             // 
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.exportToolStripMenuItem.Text = "Export";
-            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
+            this.mnuExport.Name = "mnuExport";
+            this.mnuExport.Size = new System.Drawing.Size(157, 22);
+            this.mnuExport.Text = "Export";
+            this.mnuExport.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(154, 6);
             // 
-            // saveCalendarToolStripMenuItem
+            // mnuSaveCalendar
             // 
-            this.saveCalendarToolStripMenuItem.Name = "saveCalendarToolStripMenuItem";
-            this.saveCalendarToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.saveCalendarToolStripMenuItem.Text = "Save Calendar";
+            this.mnuSaveCalendar.Name = "mnuSaveCalendar";
+            this.mnuSaveCalendar.Size = new System.Drawing.Size(157, 22);
+            this.mnuSaveCalendar.Text = "Save Calendar";
             // 
-            // newCalendarToolStripMenuItem
+            // mnuNewCalendar
             // 
-            this.newCalendarToolStripMenuItem.Name = "newCalendarToolStripMenuItem";
-            this.newCalendarToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.newCalendarToolStripMenuItem.Text = "New Calendar";
+            this.mnuNewCalendar.Name = "mnuNewCalendar";
+            this.mnuNewCalendar.Size = new System.Drawing.Size(157, 22);
+            this.mnuNewCalendar.Text = "New Calendar";
+            this.mnuNewCalendar.Click += new System.EventHandler(this.mnuNewCalendar_Click);
             // 
-            // deleteCalendarToolStripMenuItem
+            // mnuDeleteCalendar
             // 
-            this.deleteCalendarToolStripMenuItem.Name = "deleteCalendarToolStripMenuItem";
-            this.deleteCalendarToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.deleteCalendarToolStripMenuItem.Text = "Delete Calendar";
+            this.mnuDeleteCalendar.Name = "mnuDeleteCalendar";
+            this.mnuDeleteCalendar.Size = new System.Drawing.Size(157, 22);
+            this.mnuDeleteCalendar.Text = "Delete Calendar";
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewTaskToolStripMenuItem,
-            this.editTaskToolStripMenuItem,
-            this.deleteTaskToolStripMenuItem});
+            this.mnuNewTask,
+            this.mnuEditTask,
+            this.mnuDeleteTask});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
-            // addNewTaskToolStripMenuItem
+            // mnuNewTask
             // 
-            this.addNewTaskToolStripMenuItem.Name = "addNewTaskToolStripMenuItem";
-            this.addNewTaskToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.addNewTaskToolStripMenuItem.Text = "Add New Task";
+            this.mnuNewTask.Name = "mnuNewTask";
+            this.mnuNewTask.Size = new System.Drawing.Size(152, 22);
+            this.mnuNewTask.Text = "Add New Task";
             // 
-            // editTaskToolStripMenuItem
+            // mnuEditTask
             // 
-            this.editTaskToolStripMenuItem.Name = "editTaskToolStripMenuItem";
-            this.editTaskToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.editTaskToolStripMenuItem.Text = "Edit Task";
+            this.mnuEditTask.Name = "mnuEditTask";
+            this.mnuEditTask.Size = new System.Drawing.Size(152, 22);
+            this.mnuEditTask.Text = "Edit Task";
             // 
-            // deleteTaskToolStripMenuItem
+            // mnuDeleteTask
             // 
-            this.deleteTaskToolStripMenuItem.Name = "deleteTaskToolStripMenuItem";
-            this.deleteTaskToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.deleteTaskToolStripMenuItem.Text = "Delete Task";
+            this.mnuDeleteTask.Name = "mnuDeleteTask";
+            this.mnuDeleteTask.Size = new System.Drawing.Size(152, 22);
+            this.mnuDeleteTask.Text = "Delete Task";
             // 
             // vIEWToolStripMenuItem
             // 
             this.vIEWToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.filterToolStripMenuItem,
-            this.searchToolStripMenuItem});
+            this.mnuFilter,
+            this.mnuSearch});
             this.vIEWToolStripMenuItem.Name = "vIEWToolStripMenuItem";
             this.vIEWToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.vIEWToolStripMenuItem.Text = "View";
             // 
-            // filterToolStripMenuItem
+            // mnuFilter
             // 
-            this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
-            this.filterToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.filterToolStripMenuItem.Text = "Filter";
+            this.mnuFilter.Name = "mnuFilter";
+            this.mnuFilter.Size = new System.Drawing.Size(152, 22);
+            this.mnuFilter.Text = "Filter";
             // 
-            // searchToolStripMenuItem
+            // mnuSearch
             // 
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.searchToolStripMenuItem.Text = "Search";
+            this.mnuSearch.Name = "mnuSearch";
+            this.mnuSearch.Size = new System.Drawing.Size(152, 22);
+            this.mnuSearch.Text = "Search";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.documentationToolStripMenuItem,
-            this.reportBugsToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.mnuDocumentation,
+            this.mnuReportBugs,
+            this.mnuAbout});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // documentationToolStripMenuItem
+            // mnuDocumentation
             // 
-            this.documentationToolStripMenuItem.Name = "documentationToolStripMenuItem";
-            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.documentationToolStripMenuItem.Text = "Documentation";
+            this.mnuDocumentation.Name = "mnuDocumentation";
+            this.mnuDocumentation.Size = new System.Drawing.Size(157, 22);
+            this.mnuDocumentation.Text = "Documentation";
             // 
-            // reportBugsToolStripMenuItem
+            // mnuReportBugs
             // 
-            this.reportBugsToolStripMenuItem.Name = "reportBugsToolStripMenuItem";
-            this.reportBugsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.reportBugsToolStripMenuItem.Text = "Report Bugs";
+            this.mnuReportBugs.Name = "mnuReportBugs";
+            this.mnuReportBugs.Size = new System.Drawing.Size(157, 22);
+            this.mnuReportBugs.Text = "Report Bugs";
             // 
-            // aboutToolStripMenuItem
+            // mnuAbout
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.mnuAbout.Name = "mnuAbout";
+            this.mnuAbout.Size = new System.Drawing.Size(157, 22);
+            this.mnuAbout.Text = "About";
             // 
-            // monthCalendar1
+            // calDatePicker
             // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(1, 2);
-            this.monthCalendar1.Location = new System.Drawing.Point(18, 76);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 2;
+            this.calDatePicker.CalendarDimensions = new System.Drawing.Size(1, 3);
+            this.calDatePicker.Location = new System.Drawing.Point(9, 15);
+            this.calDatePicker.Name = "calDatePicker";
+            this.calDatePicker.TabIndex = 2;
+            this.calDatePicker.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calDatePicker_DateChanged);
             // 
             // dataGridViewImageColumn1
             // 
@@ -236,14 +242,15 @@
             this.colDeadline,
             this.colPriority,
             this.colReminder});
-            this.dgv_main.Location = new System.Drawing.Point(212, 76);
+            this.dgv_main.Location = new System.Drawing.Point(199, 44);
             this.dgv_main.Name = "dgv_main";
             this.dgv_main.RowHeadersVisible = false;
-            this.dgv_main.Size = new System.Drawing.Size(610, 346);
+            this.dgv_main.Size = new System.Drawing.Size(597, 437);
             this.dgv_main.TabIndex = 5;
             // 
             // colDone
             // 
+            this.colDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colDone.HeaderText = "Done";
             this.colDone.Name = "colDone";
             // 
@@ -254,35 +261,40 @@
             // 
             // colDeadline
             // 
+            this.colDeadline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colDeadline.HeaderText = "Deadline";
             this.colDeadline.Name = "colDeadline";
+            this.colDeadline.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colDeadline.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // colPriority
             // 
+            this.colPriority.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colPriority.HeaderText = "Priority";
+            this.colPriority.Items.AddRange(new object[] {
+            "-",
+            "3",
+            "2",
+            "1"});
             this.colPriority.Name = "colPriority";
+            this.colPriority.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colPriority.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // colReminder
             // 
+            this.colReminder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.colReminder.HeaderText = "Reminder";
             this.colReminder.Name = "colReminder";
-            // 
-            // btnAll
-            // 
-            this.btnAll.Location = new System.Drawing.Point(18, 399);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(178, 23);
-            this.btnAll.TabIndex = 6;
-            this.btnAll.Text = "show all task";
-            this.btnAll.UseVisualStyleBackColor = true;
+            this.colReminder.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colReminder.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsplblCopyright});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 440);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 508);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(834, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1018, 22);
             this.statusStrip1.TabIndex = 8;
             // 
             // tsplblCopyright
@@ -292,80 +304,89 @@
             this.tsplblCopyright.Size = new System.Drawing.Size(46, 17);
             this.tsplblCopyright.Text = "© DoIT";
             // 
-            // lblUser
-            // 
-            this.lblUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(15, 36);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(45, 18);
-            this.lblUser.TabIndex = 9;
-            this.lblUser.Text = "User:";
-            // 
-            // lblCalendar
-            // 
-            this.lblCalendar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblCalendar.AutoSize = true;
-            this.lblCalendar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalendar.Location = new System.Drawing.Point(209, 36);
-            this.lblCalendar.Name = "lblCalendar";
-            this.lblCalendar.Size = new System.Drawing.Size(76, 18);
-            this.lblCalendar.TabIndex = 10;
-            this.lblCalendar.Text = "Calendar:";
-            // 
             // lblUserName
             // 
             this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(66, 36);
+            this.lblUserName.Location = new System.Drawing.Point(199, 22);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(24, 19);
+            this.lblUserName.Size = new System.Drawing.Size(43, 19);
             this.lblUserName.TabIndex = 11;
-            this.lblUserName.Text = "---";
+            this.lblUserName.Text = "User";
             // 
-            // lblCalendarName
+            // splitContainer1
             // 
-            this.lblCalendarName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblCalendarName.AutoSize = true;
-            this.lblCalendarName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalendarName.Location = new System.Drawing.Point(291, 36);
-            this.lblCalendarName.Name = "lblCalendarName";
-            this.lblCalendarName.Size = new System.Drawing.Size(24, 19);
-            this.lblCalendarName.TabIndex = 12;
-            this.lblCalendarName.Text = "---";
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // frmMain
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.splitContainer1.Panel1.Controls.Add(this.lvCalendars);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.calDatePicker);
+            this.splitContainer1.Panel2.Controls.Add(this.dgv_main);
+            this.splitContainer1.Panel2.Controls.Add(this.lblUserName);
+            this.splitContainer1.Size = new System.Drawing.Size(1018, 484);
+            this.splitContainer1.SplitterDistance = 206;
+            this.splitContainer1.TabIndex = 13;
+            // 
+            // lvCalendars
+            // 
+            this.lvCalendars.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lvCalendars.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lvCalendars.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvCalendars.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvCalendars.LabelEdit = true;
+            this.lvCalendars.Location = new System.Drawing.Point(0, 0);
+            this.lvCalendars.MultiSelect = false;
+            this.lvCalendars.Name = "lvCalendars";
+            this.lvCalendars.Size = new System.Drawing.Size(206, 484);
+            this.lvCalendars.TabIndex = 0;
+            this.lvCalendars.UseCompatibleStateImageBehavior = false;
+            this.lvCalendars.View = System.Windows.Forms.View.List;
+            this.lvCalendars.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lvCalendars_ItemCheck);
+            this.lvCalendars.SelectedIndexChanged += new System.EventHandler(this.lvCalendars_SelectedIndexChanged);
+            this.lvCalendars.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvCalendars_MouseDoubleClick);
+            this.lvCalendars.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvCalendars_MouseDown);
+            this.lvCalendars.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvCalendars_MouseUp);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(834, 462);
-            this.Controls.Add(this.lblCalendarName);
-            this.Controls.Add(this.lblUserName);
-            this.Controls.Add(this.lblCalendar);
-            this.Controls.Add(this.lblUser);
+            this.ClientSize = new System.Drawing.Size(1018, 530);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.btnAll);
-            this.Controls.Add(this.dgv_main);
-            this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.mnu);
+            this.Controls.Add(this.mnuMenustrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.mnu;
+            this.MainMenuStrip = this.mnuMenustrip;
             this.MinimumSize = new System.Drawing.Size(850, 500);
-            this.Name = "frmMain";
+            this.Name = "FrmMain";
             this.Text = "DoIT";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.mnu.ResumeLayout(false);
-            this.mnu.PerformLayout();
+            this.mnuMenustrip.ResumeLayout(false);
+            this.mnuMenustrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,40 +394,39 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip mnu;
+        private System.Windows.Forms.MenuStrip mnuMenustrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveCalendarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newCalendarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteCalendarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuImport;
+        private System.Windows.Forms.ToolStripMenuItem mnuSaveCalendar;
+        private System.Windows.Forms.ToolStripMenuItem mnuNewCalendar;
+        private System.Windows.Forms.ToolStripMenuItem mnuDeleteCalendar;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addNewTaskToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editTaskToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteTaskToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuNewTask;
+        private System.Windows.Forms.ToolStripMenuItem mnuEditTask;
+        private System.Windows.Forms.ToolStripMenuItem mnuDeleteTask;
         private System.Windows.Forms.ToolStripMenuItem vIEWToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem filterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportBugsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.ToolStripMenuItem mnuFilter;
+        private System.Windows.Forms.ToolStripMenuItem mnuSearch;
+        private System.Windows.Forms.ToolStripMenuItem mnuDocumentation;
+        private System.Windows.Forms.ToolStripMenuItem mnuReportBugs;
+        private System.Windows.Forms.ToolStripMenuItem mnuAbout;
+        private System.Windows.Forms.MonthCalendar calDatePicker;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridView dgv_main;
-        private System.Windows.Forms.Button btnAll;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel tsplblCopyright;
-        private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.Label lblCalendar;
         private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.Label lblCalendarName;
-        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuExport;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colDone;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDeadline;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPriority;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colReminder;
+        private System.Windows.Forms.DataGridViewButtonColumn colDeadline;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colPriority;
+        private System.Windows.Forms.DataGridViewButtonColumn colReminder;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ListView lvCalendars;
     }
 }
 

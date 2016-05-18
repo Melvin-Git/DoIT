@@ -38,6 +38,11 @@ namespace DoIT
         {
             Calendar cal;
 
+            if (name == null)
+            {
+                name = "Calendar " + (Calendars.Count + 1);
+            }
+
             if (path != null)
             {
                 cal = new Calendar(name, Program.DeserializeTasklist());
@@ -46,6 +51,8 @@ namespace DoIT
             {
                 cal = new Calendar(name);
             }
+
+            cal.Index = (Calendars.Count);
 
             Calendars.Add(cal);
         }
