@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.mnuMenustrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuImport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExport = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuSaveCalendar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNewCalendar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDeleteCalendar = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +54,6 @@
             this.lvCalendars = new System.Windows.Forms.ListView();
             this.lblSearch = new System.Windows.Forms.Label();
             this.txbSearch = new System.Windows.Forms.TextBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.mnuMenustrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -83,7 +80,6 @@
             this.mnuImport,
             this.mnuExport,
             this.toolStripMenuItem1,
-            this.mnuSaveCalendar,
             this.mnuNewCalendar,
             this.mnuDeleteCalendar});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -108,12 +104,6 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(154, 6);
             // 
-            // mnuSaveCalendar
-            // 
-            this.mnuSaveCalendar.Name = "mnuSaveCalendar";
-            this.mnuSaveCalendar.Size = new System.Drawing.Size(157, 22);
-            this.mnuSaveCalendar.Text = "Save Calendar";
-            // 
             // mnuNewCalendar
             // 
             this.mnuNewCalendar.Name = "mnuNewCalendar";
@@ -126,6 +116,7 @@
             this.mnuDeleteCalendar.Name = "mnuDeleteCalendar";
             this.mnuDeleteCalendar.Size = new System.Drawing.Size(157, 22);
             this.mnuDeleteCalendar.Text = "Delete Calendar";
+            this.mnuDeleteCalendar.Click += new System.EventHandler(this.mnuDeleteCalendar_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -155,7 +146,7 @@
             this.calDatePicker.Location = new System.Drawing.Point(9, 15);
             this.calDatePicker.Name = "calDatePicker";
             this.calDatePicker.TabIndex = 2;
-            this.calDatePicker.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calDatePicker_DateChanged);
+//            this.calDatePicker.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calDatePicker_DateChanged);
             // 
             // dataGridViewImageColumn1
             // 
@@ -283,6 +274,7 @@
             this.lvCalendars.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvCalendars.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvCalendars.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvCalendars.FullRowSelect = true;
             this.lvCalendars.HideSelection = false;
             this.lvCalendars.LabelEdit = true;
             this.lvCalendars.Location = new System.Drawing.Point(0, 0);
@@ -317,12 +309,6 @@
             this.txbSearch.Name = "txbSearch";
             this.txbSearch.Size = new System.Drawing.Size(228, 26);
             this.txbSearch.TabIndex = 1;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // FrmMain
             // 
@@ -359,7 +345,6 @@
         private System.Windows.Forms.MenuStrip mnuMenustrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuImport;
-        private System.Windows.Forms.ToolStripMenuItem mnuSaveCalendar;
         private System.Windows.Forms.ToolStripMenuItem mnuNewCalendar;
         private System.Windows.Forms.ToolStripMenuItem mnuDeleteCalendar;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
@@ -378,7 +363,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn colDeadline;
         private System.Windows.Forms.DataGridViewComboBoxColumn colPriority;
         private System.Windows.Forms.DataGridViewButtonColumn colReminder;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ListView lvCalendars;
         private System.Windows.Forms.ToolStripMenuItem mnuAbout;
         private System.Windows.Forms.Label lblSearch;

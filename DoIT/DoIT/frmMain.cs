@@ -112,7 +112,7 @@ namespace DoIT
             }
         }
 
-        private void calDatePicker_DateChanged(object sender, DateRangeEventArgs e)
+        /*private void calDatePicker_DateChanged(object sender, DateRangeEventArgs e)
         {
             RefillDatagridview(getTasksForSelectedDay(e.End));
         }
@@ -130,7 +130,7 @@ namespace DoIT
             }
 
             return _TasksToday;
-        }
+        }*/
 
         private void RefillDatagridview(List<UserTask> tasks)
         {
@@ -189,6 +189,8 @@ namespace DoIT
         {
             _activeUser.AddCalendar(null, null);
             listCalendars();
+            lvCalendars.Items[lvCalendars.Items.Count - 1].Focused = true;
+            lvCalendars.FocusedItem.BeginEdit();
         }
 
         private void UpdateCalendarNames()
@@ -269,6 +271,24 @@ namespace DoIT
         {
             var _report = new FrmReport();
             _report.ShowDialog();
+        }
+
+        private void mnuDeleteCalendar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure that you want to permanently delete " + lvCalendars.FocusedItem.Text + "?",
+                "Delete Calendar", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                foreach (var cal in _activeUser.Calendars)
+                {
+                    if (cal.Index == (int)lvCalendars.FocusedItem.Tag)
+                    {
+                        _activeUser.Calendars.Remove(cal);
+                        lvCalendars.FocusedItem.Remove();
+                        lvCalendars.FocusedItem = lvCalendars.Items[0];
+                        break;
+                    }
+                }
+            }
         }
     }
 }
