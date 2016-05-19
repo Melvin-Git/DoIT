@@ -313,5 +313,11 @@ namespace DoIT
                 }                
             }
         }
+
+        private void mnuAbout_Click(object sender, EventArgs e)
+        {
+            var about = new frmAbout();
+            about.ShowDialog();
+        }
     }
 }

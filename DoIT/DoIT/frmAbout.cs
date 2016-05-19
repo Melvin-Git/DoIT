@@ -6,14 +6,12 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
-using System.Xml.Linq;
 
 namespace DoIT
 {
-    partial class FrmAbout : Form
+    partial class frmAbout : Form
     {
-        public FrmAbout()
+        public frmAbout()
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
@@ -103,21 +101,5 @@ namespace DoIT
             }
         }
         #endregion
-
-        private void frmAbout_Load(object sender, EventArgs e)
-        {
-            XmlDocument infos = new XmlDocument();
-            infos.Load("../../About.xml");
-            lblProductname.Text = infos.SelectSingleNode("//productname").InnerText;
-            lblVersion.Text = infos.SelectSingleNode("//version").InnerText;
-            lblCopyright.Text = infos.SelectSingleNode("//copyright").InnerText;
-            lblCompany.Text = infos.SelectSingleNode("//company").InnerText;
-            lblDeveloper.Text = infos.SelectSingleNode("//developer").InnerText;
-        }
-
-        private void okButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }

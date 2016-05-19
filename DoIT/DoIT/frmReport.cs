@@ -30,10 +30,10 @@ namespace DoIT
                 mail.To.Add("");
                 mail.Subject = "Report ToDo";
                 mail.Body = "User: " + txbMail.Text + "\r\nMesseage: " + rtbMeldung.Text;
-                SmtpClient client = new SmtpClient("", 465);
+                SmtpClient client = new SmtpClient("", );
                 try
                 {
-                    client.Credentials = new System.Net.NetworkCredential("", "Password");
+                    client.Credentials = new System.Net.NetworkCredential("", "");
                     client.EnableSsl = false;
                     client.Send(mail);
                     MessageBox.Show("Your mail was successfully sent!");

@@ -180,6 +180,7 @@
             this.txbSignInPassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSignInPassword.Location = new System.Drawing.Point(17, 162);
             this.txbSignInPassword.Name = "txbSignInPassword";
+            this.txbSignInPassword.PasswordChar = '�';
             this.txbSignInPassword.Size = new System.Drawing.Size(275, 27);
             this.txbSignInPassword.TabIndex = 4;
             // 
@@ -251,6 +252,7 @@
             this.txbRegisterPasswordRepeat.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbRegisterPasswordRepeat.Location = new System.Drawing.Point(25, 167);
             this.txbRegisterPasswordRepeat.Name = "txbRegisterPasswordRepeat";
+            this.txbRegisterPasswordRepeat.PasswordChar = '�';
             this.txbRegisterPasswordRepeat.Size = new System.Drawing.Size(249, 27);
             this.txbRegisterPasswordRepeat.TabIndex = 10;
             // 
@@ -271,6 +273,7 @@
             this.txbRegisterPassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbRegisterPassword.Location = new System.Drawing.Point(24, 104);
             this.txbRegisterPassword.Name = "txbRegisterPassword";
+            this.txbRegisterPassword.PasswordChar = '�';
             this.txbRegisterPassword.Size = new System.Drawing.Size(250, 27);
             this.txbRegisterPassword.TabIndex = 8;
             // 
@@ -325,7 +328,7 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // frmLogin
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -334,7 +337,7 @@
             this.Controls.Add(this.scSplitContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmLogin";
+            this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome to DoIT!";
             this.Load += new System.EventHandler(this.frmLogin_Load);

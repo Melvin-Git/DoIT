@@ -130,15 +130,16 @@
             // mnuReportBugs
             // 
             this.mnuReportBugs.Name = "mnuReportBugs";
-            this.mnuReportBugs.Size = new System.Drawing.Size(138, 22);
+            this.mnuReportBugs.Size = new System.Drawing.Size(152, 22);
             this.mnuReportBugs.Text = "Report Bugs";
             this.mnuReportBugs.Click += new System.EventHandler(this.mnuReportBugs_Click);
             // 
             // mnuAbout
             // 
             this.mnuAbout.Name = "mnuAbout";
-            this.mnuAbout.Size = new System.Drawing.Size(138, 22);
+            this.mnuAbout.Size = new System.Drawing.Size(152, 22);
             this.mnuAbout.Text = "About";
+            this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
             // 
             // calDatePicker
             // 
@@ -146,7 +147,6 @@
             this.calDatePicker.Location = new System.Drawing.Point(9, 15);
             this.calDatePicker.Name = "calDatePicker";
             this.calDatePicker.TabIndex = 2;
-//            this.calDatePicker.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calDatePicker_DateChanged);
             // 
             // dataGridViewImageColumn1
             // 
