@@ -40,6 +40,7 @@
             this.mnuDeleteCalendar = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReportBugs = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.calDatePicker = new System.Windows.Forms.MonthCalendar();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgv_main = new System.Windows.Forms.DataGridView();
@@ -53,10 +54,9 @@
             this.lblUserName = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lvCalendars = new System.Windows.Forms.ListView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.txbSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
+            this.txbSearch = new System.Windows.Forms.TextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.mnuMenustrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -141,6 +141,13 @@
             this.mnuReportBugs.Name = "mnuReportBugs";
             this.mnuReportBugs.Size = new System.Drawing.Size(152, 22);
             this.mnuReportBugs.Text = "Report Bugs";
+            this.mnuReportBugs.Click += new System.EventHandler(this.mnuReportBugs_Click);
+            // 
+            // mnuAbout
+            // 
+            this.mnuAbout.Name = "mnuAbout";
+            this.mnuAbout.Size = new System.Drawing.Size(152, 22);
+            this.mnuAbout.Text = "About";
             // 
             // calDatePicker
             // 
@@ -291,26 +298,6 @@
             this.lvCalendars.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvCalendars_MouseDown);
             this.lvCalendars.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvCalendars_MouseUp);
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // mnuAbout
-            // 
-            this.mnuAbout.Name = "mnuAbout";
-            this.mnuAbout.Size = new System.Drawing.Size(152, 22);
-            this.mnuAbout.Text = "About";
-            // 
-            // txbSearch
-            // 
-            this.txbSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSearch.Location = new System.Drawing.Point(568, 15);
-            this.txbSearch.Name = "txbSearch";
-            this.txbSearch.Size = new System.Drawing.Size(228, 26);
-            this.txbSearch.TabIndex = 1;
-            // 
             // lblSearch
             // 
             this.lblSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -322,6 +309,20 @@
             this.lblSearch.Size = new System.Drawing.Size(58, 18);
             this.lblSearch.TabIndex = 12;
             this.lblSearch.Text = "Search";
+            // 
+            // txbSearch
+            // 
+            this.txbSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSearch.Location = new System.Drawing.Point(568, 15);
+            this.txbSearch.Name = "txbSearch";
+            this.txbSearch.Size = new System.Drawing.Size(228, 26);
+            this.txbSearch.TabIndex = 1;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // FrmMain
             // 

@@ -264,5 +264,11 @@ namespace DoIT
                 }
             }
         }
+
+        private void mnuReportBugs_Click(object sender, EventArgs e)
+        {
+            var _report = new FrmReport();
+            _report.ShowDialog();
+        }
     }
 }
