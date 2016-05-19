@@ -275,12 +275,13 @@ namespace DoIT
 
         private void mnuDeleteCalendar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure that you want to permanently delete " + lvCalendars.FocusedItem.Text + "?",
+            if (MessageBox.Show(
+                "Are you sure that you want to permanently delete " + lvCalendars.FocusedItem.Text + "?",
                 "Delete Calendar", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 foreach (var cal in _activeUser.Calendars)
                 {
-                    if (cal.Index == (int)lvCalendars.FocusedItem.Tag)
+                    if (cal.Index == (int) lvCalendars.FocusedItem.Tag)
                     {
                         _activeUser.Calendars.Remove(cal);
                         lvCalendars.FocusedItem.Remove();
@@ -288,6 +289,28 @@ namespace DoIT
                         break;
                     }
                 }
+            }
+        }
+
+        private
+            void txbSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string searchval = txbSearch.Text;
+                foreach (DataGridViewRow ro in dgv_main.Rows)
+                {
+                    if(ro.Index == dgv_main.RowCount - 1)
+                    {
+                        break;
+                    }
+
+                    if (ro.Cells[1].Value.ToString().Equals(searchval))
+                    {
+                        ro.Selected = true;
+                        ro.Cells[1].Style.BackColor = Color.Coral;
+                    }
+                }                
             }
         }
     }
