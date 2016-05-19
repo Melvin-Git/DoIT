@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+using System.Net.Mail;
 
 namespace DoIT
 {
@@ -19,16 +21,33 @@ namespace DoIT
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            try
+            Regex reg = new Regex(@"@");
+            Match mat = reg.Match(txbMail.Text);
+            if (mat.Success)
             {
-                System.IO.StreamWriter report = new System.IO.StreamWriter("c:\\temp\\DoIT-Report.txt", true);
-                report.WriteLine("mailto:" + txbMail.Text + "/" + rtbMeldung.Text + "\r\n");
-                report.Close();
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress("");
+                mail.To.Add("");
+                mail.Subject = "Report ToDo";
+                mail.Body = "User: " + txbMail.Text + "\r\nMesseage: " + rtbMeldung.Text;
+                SmtpClient client = new SmtpClient("", 465);
+                try
+                {
+                    client.Credentials = new System.Net.NetworkCredential("", "Password");
+                    client.EnableSsl = false;
+                    client.Send(mail);
+                    MessageBox.Show("Your mail was successfully sent!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unable to Send\r\n\r\n" + "Details: " + ex.Message, "Error", MessageBoxButtons.OK);
+                }
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show("Unable to Send\r\n\r\n" + "Details: " + ex.Message, "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Your mail is incorrect!");
             }
+            Close();
             Close();
         }
     }
