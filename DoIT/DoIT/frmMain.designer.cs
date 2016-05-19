@@ -38,17 +38,8 @@
             this.mnuSaveCalendar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNewCalendar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDeleteCalendar = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNewTask = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuEditTask = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuDeleteTask = new System.Windows.Forms.ToolStripMenuItem();
-            this.vIEWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuFilter = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuDocumentation = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReportBugs = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.calDatePicker = new System.Windows.Forms.MonthCalendar();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgv_main = new System.Windows.Forms.DataGridView();
@@ -63,6 +54,9 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lvCalendars = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.txbSearch = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
             this.mnuMenustrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -76,8 +70,6 @@
             // 
             this.mnuMenustrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.vIEWToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.mnuMenustrip.Location = new System.Drawing.Point(0, 0);
             this.mnuMenustrip.Name = "mnuMenustrip";
@@ -135,82 +127,20 @@
             this.mnuDeleteCalendar.Size = new System.Drawing.Size(157, 22);
             this.mnuDeleteCalendar.Text = "Delete Calendar";
             // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuNewTask,
-            this.mnuEditTask,
-            this.mnuDeleteTask});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // mnuNewTask
-            // 
-            this.mnuNewTask.Name = "mnuNewTask";
-            this.mnuNewTask.Size = new System.Drawing.Size(152, 22);
-            this.mnuNewTask.Text = "Add New Task";
-            // 
-            // mnuEditTask
-            // 
-            this.mnuEditTask.Name = "mnuEditTask";
-            this.mnuEditTask.Size = new System.Drawing.Size(152, 22);
-            this.mnuEditTask.Text = "Edit Task";
-            // 
-            // mnuDeleteTask
-            // 
-            this.mnuDeleteTask.Name = "mnuDeleteTask";
-            this.mnuDeleteTask.Size = new System.Drawing.Size(152, 22);
-            this.mnuDeleteTask.Text = "Delete Task";
-            // 
-            // vIEWToolStripMenuItem
-            // 
-            this.vIEWToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFilter,
-            this.mnuSearch});
-            this.vIEWToolStripMenuItem.Name = "vIEWToolStripMenuItem";
-            this.vIEWToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.vIEWToolStripMenuItem.Text = "View";
-            // 
-            // mnuFilter
-            // 
-            this.mnuFilter.Name = "mnuFilter";
-            this.mnuFilter.Size = new System.Drawing.Size(152, 22);
-            this.mnuFilter.Text = "Filter";
-            // 
-            // mnuSearch
-            // 
-            this.mnuSearch.Name = "mnuSearch";
-            this.mnuSearch.Size = new System.Drawing.Size(152, 22);
-            this.mnuSearch.Text = "Search";
-            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuDocumentation,
             this.mnuReportBugs,
             this.mnuAbout});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // mnuDocumentation
-            // 
-            this.mnuDocumentation.Name = "mnuDocumentation";
-            this.mnuDocumentation.Size = new System.Drawing.Size(157, 22);
-            this.mnuDocumentation.Text = "Documentation";
-            // 
             // mnuReportBugs
             // 
             this.mnuReportBugs.Name = "mnuReportBugs";
-            this.mnuReportBugs.Size = new System.Drawing.Size(157, 22);
+            this.mnuReportBugs.Size = new System.Drawing.Size(152, 22);
             this.mnuReportBugs.Text = "Report Bugs";
-            // 
-            // mnuAbout
-            // 
-            this.mnuAbout.Name = "mnuAbout";
-            this.mnuAbout.Size = new System.Drawing.Size(157, 22);
-            this.mnuAbout.Text = "About";
             // 
             // calDatePicker
             // 
@@ -245,8 +175,10 @@
             this.dgv_main.Location = new System.Drawing.Point(199, 44);
             this.dgv_main.Name = "dgv_main";
             this.dgv_main.RowHeadersVisible = false;
+            this.dgv_main.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_main.Size = new System.Drawing.Size(597, 437);
             this.dgv_main.TabIndex = 5;
+            this.dgv_main.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_main_CellContentClick);
             // 
             // colDone
             // 
@@ -329,6 +261,8 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.lblSearch);
+            this.splitContainer1.Panel2.Controls.Add(this.txbSearch);
             this.splitContainer1.Panel2.Controls.Add(this.calDatePicker);
             this.splitContainer1.Panel2.Controls.Add(this.dgv_main);
             this.splitContainer1.Panel2.Controls.Add(this.lblUserName);
@@ -342,6 +276,7 @@
             this.lvCalendars.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvCalendars.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvCalendars.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvCalendars.HideSelection = false;
             this.lvCalendars.LabelEdit = true;
             this.lvCalendars.Location = new System.Drawing.Point(0, 0);
             this.lvCalendars.MultiSelect = false;
@@ -361,6 +296,32 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // mnuAbout
+            // 
+            this.mnuAbout.Name = "mnuAbout";
+            this.mnuAbout.Size = new System.Drawing.Size(152, 22);
+            this.mnuAbout.Text = "About";
+            // 
+            // txbSearch
+            // 
+            this.txbSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSearch.Location = new System.Drawing.Point(568, 15);
+            this.txbSearch.Name = "txbSearch";
+            this.txbSearch.Size = new System.Drawing.Size(228, 26);
+            this.txbSearch.TabIndex = 1;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(504, 18);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(58, 18);
+            this.lblSearch.TabIndex = 12;
+            this.lblSearch.Text = "Search";
             // 
             // FrmMain
             // 
@@ -400,17 +361,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnuSaveCalendar;
         private System.Windows.Forms.ToolStripMenuItem mnuNewCalendar;
         private System.Windows.Forms.ToolStripMenuItem mnuDeleteCalendar;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnuNewTask;
-        private System.Windows.Forms.ToolStripMenuItem mnuEditTask;
-        private System.Windows.Forms.ToolStripMenuItem mnuDeleteTask;
-        private System.Windows.Forms.ToolStripMenuItem vIEWToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnuFilter;
-        private System.Windows.Forms.ToolStripMenuItem mnuSearch;
-        private System.Windows.Forms.ToolStripMenuItem mnuDocumentation;
         private System.Windows.Forms.ToolStripMenuItem mnuReportBugs;
-        private System.Windows.Forms.ToolStripMenuItem mnuAbout;
         private System.Windows.Forms.MonthCalendar calDatePicker;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridView dgv_main;
@@ -427,6 +379,9 @@
         private System.Windows.Forms.DataGridViewButtonColumn colReminder;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ListView lvCalendars;
+        private System.Windows.Forms.ToolStripMenuItem mnuAbout;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.TextBox txbSearch;
     }
 }
 

@@ -15,24 +15,23 @@ namespace DoIT
         // Properties
         public string Username { get; set; }
         public string Password { get; set; }
-        public List<UserTask> Tasks { get; set; }
         public List<Calendar> Calendars { get; set; }
 
         // Methods
-        public void AddTask(UserTask task)
+        /*public void AddTask(UserTask task)
         {
-            Tasks.Add(task);
+            //Tasks.Add(task);
         }
 
         public UserTask EditTask(int index)
         {
-            return Tasks[index];
+            //return Tasks[index];
         }
 
         public void DeleteTask(UserTask task)
         {
-            Tasks.Remove(task);
-        }
+            //Tasks.Remove(task);
+        }*/
 
         public void AddCalendar(string name, string path)
         {

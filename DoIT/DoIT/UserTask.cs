@@ -6,6 +6,10 @@ namespace DoIT
     {
         // Properties
 
+        // Index
+
+        public int Index { get; set; }
+
         // Description
 
         public string Description { get; set; }
@@ -22,7 +26,7 @@ namespace DoIT
 
         public DateTime Reminder { get; set; }
 
-        // Done?
+        // Status
 
         public TaskStatus Status { get; set; }
 
@@ -31,7 +35,7 @@ namespace DoIT
         {
         }
 
-        public UserTask(string description, DateTime deadline, int priority, DateTime reminder, TaskStatus status)
+        public UserTask(int index, string description, DateTime deadline, int priority, DateTime reminder, TaskStatus status)
         {
         }
 

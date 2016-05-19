@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms;
@@ -146,9 +147,9 @@ namespace DoIT
                 // Datagridview Columns: [Status] , [Description] , [Date] , [Priority] , [Reminder]
                 var status = task.Status;
                 var description = task.Description;
-                var date = task.Deadline.ToString();
+                var date = task.Deadline.ToString(Program.DateTimeFormats[2]);
                 int priority;
-                var reminder = task.Reminder.ToString();
+                var reminder = task.Reminder.ToString(Program.DateTimeFormats[2]);
 
                 var row = new DataGridViewRow();
                 dgv_main.Rows.Add(row);
@@ -240,6 +241,28 @@ namespace DoIT
         {
             if (_inhibitAutoCheck)
                 e.NewValue = e.CurrentValue;
+        }
+
+        private void dgv_main_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == dgv_main.RowCount - 1)
+            {
+                return;
+            }
+
+            var senderGrid = (DataGridView) sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                DataGridViewButtonCell cell = (DataGridViewButtonCell)senderGrid.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                var _calDialog = new frmCalDialog(cell.Value.ToString());
+                if (_calDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // IMPLEMENT: UserTask (depending on index)
+
+                    cell.Value = _calDialog.getDateTime();
+                }
+            }
         }
     }
 }

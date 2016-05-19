@@ -24,6 +24,7 @@ namespace DoIT
 
         public static List<User> Users = new List<User>();
         public static User ActiveUser = null;
+        public static string[] DateTimeFormats = {"dd.MM.yyyy" , "HH:mm" , "dd.MM.yyyy , HH:mm"};
 
         public static List<UserTask> DeserializeTasklist()
         {

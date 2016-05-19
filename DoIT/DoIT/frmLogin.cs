@@ -109,17 +109,6 @@ namespace DoIT
             Hide();
         }
 
-        /*private void ShowWelcomeDialog()
-        {
-            var f = new Form();
-            f.FormBorderStyle = FormBorderStyle.None;
-            f.Width = 325;
-            f.Height = 126;
-            f.StartPosition = FormStartPosition.CenterParent;
-
-            var welcomeLabel = new Label();
-        }*/
-
         // The following Methods contain the MoveForm function.
         private void scSplitContainer_Panel1_MouseDown(object sender, MouseEventArgs e)
         {
