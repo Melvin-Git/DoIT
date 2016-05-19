@@ -270,5 +270,26 @@ namespace DoIT
             var _report = new FrmReport();
             _report.ShowDialog();
         }
+
+        private void txbSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string searchval = txbSearch.Text;
+                foreach (DataGridViewRow ro in dgv_main.Rows)
+                {
+                    if(ro.Index == dgv_main.RowCount - 1)
+                    {
+                        break;
+                    }
+
+                    if (ro.Cells[1].Value.ToString().Equals(searchval))
+                    {
+                        ro.Selected = true;
+                        ro.Cells[1].Style.BackColor = Color.Coral;
+                    }
+                }                
+            }
+        }
     }
 }

@@ -139,14 +139,14 @@
             // mnuReportBugs
             // 
             this.mnuReportBugs.Name = "mnuReportBugs";
-            this.mnuReportBugs.Size = new System.Drawing.Size(152, 22);
+            this.mnuReportBugs.Size = new System.Drawing.Size(138, 22);
             this.mnuReportBugs.Text = "Report Bugs";
             this.mnuReportBugs.Click += new System.EventHandler(this.mnuReportBugs_Click);
             // 
             // mnuAbout
             // 
             this.mnuAbout.Name = "mnuAbout";
-            this.mnuAbout.Size = new System.Drawing.Size(152, 22);
+            this.mnuAbout.Size = new System.Drawing.Size(138, 22);
             this.mnuAbout.Text = "About";
             // 
             // calDatePicker
@@ -317,6 +317,7 @@
             this.txbSearch.Name = "txbSearch";
             this.txbSearch.Size = new System.Drawing.Size(228, 26);
             this.txbSearch.TabIndex = 1;
+            this.txbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbSearch_KeyDown);
             // 
             // imageList1
             // 
